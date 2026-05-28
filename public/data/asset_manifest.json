@@ -1,0 +1,15 @@
+{
+  "schemaVersion": "1.0.0",
+  "sourcePolicy": {
+    "privacy": "public",
+    "redactionRequired": false,
+    "notes": "Large original files are stored in Vercel Blob, not GitHub. Replace these placeholder URLs after Blob upload."
+  },
+  "artifacts": [
+    {"id":"zq-three-md-v5","projectId":"zq","projectName":"子虔科技","groupId":"zq-three-md-v5","sopStepId":"sop-05-three-md","title":"子虔三 md v5","fileName":"01_投委材料投资逻辑框架_通用v5.md","fileType":"md","url":"#blob-pending","thumbnailUrl":null,"version":"v5","description":"子虔最终阶段三 md 输入包样例。","isFinal":true,"uploadStatus":"pending-blob"},
+    {"id":"zq-reference-images-v4","projectId":"zq","projectName":"子虔科技","groupId":"zq-reference-images-v4","sopStepId":"sop-06-slide-images","title":"子虔 Slide 图片","fileName":"01_投资逻辑_子虔的本质是从CAD工具升级为设计Copilot.png","fileType":"png","url":"#blob-pending","thumbnailUrl":null,"version":"v4","description":"子虔 reference image 样例。","isFinal":true,"uploadStatus":"pending-blob"},
+    {"id":"yhy-investment-logic","projectId":"yhy","projectName":"扬贺扬微电子","groupId":"yhy-investment-logic","sopStepId":"sop-04-logic-expansion","title":"扬贺扬投资逻辑 PDF","fileName":"扬贺扬投资逻辑及要点阐述_优化版_20260527.pdf","fileType":"pdf","url":"#blob-pending","thumbnailUrl":null,"version":"20260527","description":"扬贺扬核心投资逻辑 PDF 样例。","isFinal":true,"uploadStatus":"pending-blob"},
+    {"id":"yhy-full-reference-images-v5","projectId":"yhy","projectName":"扬贺扬微电子","groupId":"yhy-full-reference-images-v5","sopStepId":"sop-06-slide-images","title":"扬贺扬全套 Slide 图片","fileName":"slide_01_core_investment_logic.png","fileType":"png","url":"#blob-pending","thumbnailUrl":null,"version":"v5","description":"扬贺扬 v5 全套 reference image 样例。","isFinal":true,"uploadStatus":"pending-blob"},
+    {"id":"yhy-image2ppt-v5","projectId":"yhy","projectName":"扬贺扬微电子","groupId":"yhy-image2ppt-v5","sopStepId":"sop-07-image2ppt","title":"扬贺扬 Image2PPT 输出","fileName":"扬贺扬微电子立项报告_v5_全套测试图_2x高清铺满版.pptx","fileType":"pptx","url":"#blob-pending","thumbnailUrl":null,"version":"v5","description":"大文件应上传到 Vercel Blob 后替换 URL。","isFinal":true,"uploadStatus":"pending-blob"}
+  ]
+}
