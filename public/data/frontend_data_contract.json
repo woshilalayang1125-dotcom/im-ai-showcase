@@ -1,0 +1,24 @@
+{
+  "schemaVersion": "1.0.0",
+  "sampleData": {
+    "sopSteps": [
+      {"id":"sop-01-material-collection","order":1,"title":"项目资料收集","shortTitle":"资料收集","description":"收集 BP、访谈纪要、技术文档、产品资料和财务资料，形成云端与本地资料池。","inputs":["公司 BP","访谈纪要","技术文档","产品资料","财务资料"],"actions":["整理资料","同步 Google Drive","同步本地 datapack"],"outputs":["云端资料池","本地 datapack"],"humanReviewPoints":["资料完整性","命名可追溯","关键缺口"],"relatedSkills":[]},
+      {"id":"sop-02-research-expansion","order":2,"title":"大模型行研补充","shortTitle":"行研补充","description":"用 ChatGPT/Gemini 检索资料池和互联网，补充行业、技术、市场和公司研究。","inputs":["资料池","互联网公开资料"],"actions":["行业扫描","深度研究","来源记录"],"outputs":["研究报告","补充资料"],"humanReviewPoints":["来源清晰","数据可验证","推导可复现"],"relatedSkills":[]},
+      {"id":"sop-03-core-logic","order":3,"title":"投资人梳理核心主投资逻辑","shortTitle":"主逻辑","description":"投资人基于资料池人工梳理 3-5 条核心主投资逻辑。","inputs":["全部资料池","补充研究"],"actions":["人工判断","归纳核心变量"],"outputs":["3-5 条主投资逻辑"],"humanReviewPoints":["是否有投资意义","是否能被证据支持"],"relatedSkills":[]},
+      {"id":"sop-04-logic-expansion","order":4,"title":"大模型扩展主逻辑与支撑子逻辑","shortTitle":"逻辑扩展","description":"让大模型基于资料池为每条主逻辑生成支撑子逻辑和证据路径。","inputs":["主投资逻辑","资料池"],"actions":["资料检索","子逻辑拆解","证据映射"],"outputs":["项目核心投资逻辑 PDF"],"humanReviewPoints":["避免跳步推理","标注弱证据"],"relatedSkills":[]},
+      {"id":"sop-05-three-md","order":5,"title":"生成三 md 投委材料输入包","shortTitle":"三 md","description":"调用 Ic Investment Memo Sop 生成投资逻辑框架、Slides 框架结构、逐页内容与证据表。","inputs":["核心投资逻辑 PDF","datapack"],"actions":["构建因果链","映射证据","输出三 md"],"outputs":["投资逻辑框架 md","Slides 框架 md","逐页证据表 md"],"humanReviewPoints":["主逻辑保留","标题结论导向","证据分级"],"relatedSkills":["ic-investment-memo-sop"]},
+      {"id":"sop-06-slide-images","order":6,"title":"生成 CATL 风格 Slide 图片","shortTitle":"Slide 图片","description":"调用 CATL Codex PPT 基于三 md 逐页生成 CATL 风格高密度 Slide 图片。","inputs":["三 md 文件"],"actions":["生成页面","筛选修正","重命名排序"],"outputs":["reference_images","图片清单"],"humanReviewPoints":["内容投委可见","页面清晰","无生成痕迹"],"relatedSkills":["catl-codex-ppt"]},
+      {"id":"sop-07-image2ppt","order":7,"title":"组装贴图版 PPT","shortTitle":"Image2PPT","description":"调用 Image2PPT 把排序后的图片高清组装为 16:9 贴图版 PPT。","inputs":["Slide 图片文件夹"],"actions":["自然排序","高清锐化","铺满 PPT"],"outputs":["贴图版 PPTX"],"humanReviewPoints":["页数一致","图片清晰","无裁切"],"relatedSkills":["image2ppt"]},
+      {"id":"sop-08-editable-ppt","order":8,"title":"Codia.AI 转可编辑 PPT","shortTitle":"可编辑 PPT","description":"把最终图片批量导入 Codia.AI，转为可编辑 PPT 供人工精修。","inputs":["最终 Slide 图片"],"actions":["导入 Codia.AI","转换可编辑 PPT"],"outputs":["可编辑 PPTX"],"humanReviewPoints":["图层可编辑","文字图表还原"],"relatedSkills":[]}
+    ],
+    "skills": [
+      {"id":"ic-investment-memo-sop","name":"Ic Investment Memo Sop","definition":"把投资逻辑文件和 datapack 转成三 md 投委材料输入包。","stage":"核心投资逻辑确定后","inputs":["投资逻辑文件","datapack","研究资料"],"outputs":["投资逻辑框架 md","Slides 框架 md","逐页内容与证据表 md"],"role":"把人工投资判断重构成可生成投委材料的因果链和证据矩阵。","constraints":["保留用户逻辑顺序","区分证据强弱"],"qualityGates":["逻辑一致","证据可追溯"],"creationAndTuning":["从项目复盘沉淀规则"]},
+      {"id":"catl-codex-ppt","name":"CATL Codex PPT","definition":"基于三 md 生成 CATL 风格高密度 Slide 图片。","stage":"三 md 完成后","inputs":["三 md","CATL 风格要求"],"outputs":["Slide 图片","图片 manifest"],"role":"把结构化投委内容转成可检查、可迭代的视觉页面。","constraints":["CATL 蓝色体系","无本地路径或生成提示"],"qualityGates":["图片清晰","标题为投资结论"],"creationAndTuning":["根据案例迭代页面密度"]},
+      {"id":"image2ppt","name":"Image2PPT","definition":"把排序后的 Slide 图片高清组装成 16:9 贴图版 PPT。","stage":"Slide 图片确认后","inputs":["Slide 图片文件夹"],"outputs":["贴图版 PPTX"],"role":"快速形成可传阅、可批注、可作为 Codia.AI 输入的 PPT。","constraints":["自然排序","一页一图","不拉伸"],"qualityGates":["页数一致","图片铺满"],"creationAndTuning":["根据模糊、裁切、排序问题调整"]}
+    ],
+    "caseProjects": [
+      {"id":"zq","name":"子虔科技","shortName":"子虔","summary":"围绕 CAD 工具向设计 Copilot 升级的立项报告生成案例。","industry":"AI 软件 / 工业软件","caseSteps":[{"id":"zq-three-md","sopStepId":"sop-05-three-md","title":"子虔三 md 多版本生成","description":"基于投资逻辑和 datapack 迭代生成自然高密度三 md。","skillUsed":["ic-investment-memo-sop"],"inputArtifacts":[],"outputArtifacts":[],"iterations":[],"finalResultSummary":"形成可供 Slide 图片生成的三 md 输入包。"}]},
+      {"id":"yhy","name":"扬贺扬微电子","shortName":"扬贺扬","summary":"围绕 2D NAND 和边缘 AI 存储机会的立项报告生成案例。","industry":"AI 硬件 / 半导体存储","caseSteps":[{"id":"yhy-full-images","sopStepId":"sop-06-slide-images","title":"扬贺扬全套 Slide 图片生成","description":"基于三 md v5 生成全套测试图和贴图 PPT 输入图。","skillUsed":["catl-codex-ppt"],"inputArtifacts":[],"outputArtifacts":[],"iterations":[],"finalResultSummary":"形成 24 页全套图片和高清贴图 PPT。"}]}
+    ]
+  }
+}
