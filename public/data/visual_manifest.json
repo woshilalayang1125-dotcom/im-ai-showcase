@@ -1,0 +1,180 @@
+{
+  "visuals": [
+    {
+      "id": "sop-ui",
+      "title": "???????",
+      "description": "?????? SOP ?????????AI ?????????????",
+      "group": "workflow",
+      "section": "workflow",
+      "url": "/visuals/sop-ui.svg"
+    },
+    {
+      "id": "skill-ui",
+      "title": "Skill ????",
+      "description": "??????? Skill ?????????????????",
+      "group": "workflow",
+      "section": "workflow",
+      "url": "/visuals/skill-ui.svg"
+    },
+    {
+      "id": "case-ui",
+      "title": "??????",
+      "description": "???????????????????????",
+      "group": "workflow",
+      "section": "workflow",
+      "url": "/visuals/case-ui.svg"
+    },
+    {
+      "id": "logic-closure-loop",
+      "title": "????????????",
+      "description": "? imagegen ??????????????????",
+      "group": "workflow",
+      "section": "closure",
+      "url": "/visuals/logic-closure-loop.png"
+    },
+    {
+      "id": "zq-core-01",
+      "title": "?????",
+      "description": "???? CAD ??????? Copilot?",
+      "group": "zq",
+      "section": "?????",
+      "url": "/artifacts/zq/images/zq-core-01.png"
+    },
+    {
+      "id": "zq-industry-02",
+      "title": "???? 01",
+      "description": "???????? CAD ???",
+      "group": "zq",
+      "section": "industry",
+      "url": "/artifacts/zq/images/zq-industry-02.png"
+    },
+    {
+      "id": "zq-industry-04",
+      "title": "???? 02",
+      "description": "?? CAD ?????????????? AI ????",
+      "group": "zq",
+      "section": "industry",
+      "url": "/artifacts/zq/images/zq-industry-04.png"
+    },
+    {
+      "id": "zq-industry-08",
+      "title": "???? 03",
+      "description": "??????? VibeCAD ??????",
+      "group": "zq",
+      "section": "industry",
+      "url": "/artifacts/zq/images/zq-industry-08.png"
+    },
+    {
+      "id": "zq-company-09",
+      "title": "???? 01",
+      "description": "?????????",
+      "group": "zq",
+      "section": "company",
+      "url": "/artifacts/zq/images/zq-company-09.png"
+    },
+    {
+      "id": "zq-company-10",
+      "title": "???? 02",
+      "description": "?????????????? AI ??",
+      "group": "zq",
+      "section": "company",
+      "url": "/artifacts/zq/images/zq-company-10.png"
+    },
+    {
+      "id": "zq-company-12",
+      "title": "???? 03",
+      "description": "????????????????",
+      "group": "zq",
+      "section": "company",
+      "url": "/artifacts/zq/images/zq-company-12.png"
+    },
+    {
+      "id": "zq-finance-19",
+      "title": "???",
+      "description": "?????",
+      "group": "zq",
+      "section": "finance-risk",
+      "url": "/artifacts/zq/images/zq-finance-19.png"
+    },
+    {
+      "id": "zq-risk-20",
+      "title": "???",
+      "description": "???????????????????????",
+      "group": "zq",
+      "section": "finance-risk",
+      "url": "/artifacts/zq/images/zq-risk-20.png"
+    },
+    {
+      "id": "yhy-core-01",
+      "title": "?????",
+      "description": "?????? AI ????????????",
+      "group": "yhy",
+      "section": "?????",
+      "url": "/artifacts/yhy/images/yhy-core-01.png"
+    },
+    {
+      "id": "yhy-industry-02",
+      "title": "???? 01",
+      "description": "AI ?????????????",
+      "group": "yhy",
+      "section": "industry",
+      "url": "/artifacts/yhy/images/yhy-industry-02.png"
+    },
+    {
+      "id": "yhy-industry-04",
+      "title": "???? 02",
+      "description": "?? AI ???????",
+      "group": "yhy",
+      "section": "industry",
+      "url": "/artifacts/yhy/images/yhy-industry-04.png"
+    },
+    {
+      "id": "yhy-industry-10",
+      "title": "???? 03",
+      "description": "MLC/eMMC ????????",
+      "group": "yhy",
+      "section": "industry",
+      "url": "/artifacts/yhy/images/yhy-industry-10.png"
+    },
+    {
+      "id": "yhy-company-13",
+      "title": "???? 01",
+      "description": "????????????",
+      "group": "yhy",
+      "section": "company",
+      "url": "/artifacts/yhy/images/yhy-company-13.png"
+    },
+    {
+      "id": "yhy-company-14",
+      "title": "???? 02",
+      "description": "SLC ?????????",
+      "group": "yhy",
+      "section": "company",
+      "url": "/artifacts/yhy/images/yhy-company-14.png"
+    },
+    {
+      "id": "yhy-company-20",
+      "title": "???? 03",
+      "description": "?????????????",
+      "group": "yhy",
+      "section": "company",
+      "url": "/artifacts/yhy/images/yhy-company-20.png"
+    },
+    {
+      "id": "yhy-finance-22",
+      "title": "???",
+      "description": "??????????",
+      "group": "yhy",
+      "section": "finance-risk",
+      "url": "/artifacts/yhy/images/yhy-finance-22.png"
+    },
+    {
+      "id": "yhy-risk-23",
+      "title": "???",
+      "description": "???????",
+      "group": "yhy",
+      "section": "finance-risk",
+      "url": "/artifacts/yhy/images/yhy-risk-23.png"
+    }
+  ]
+}

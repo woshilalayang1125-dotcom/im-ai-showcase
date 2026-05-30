@@ -26,7 +26,10 @@ export default async function handler(request, response) {
         addRandomSuffix: true,
         tokenPayload: JSON.stringify({ source: "im-ai-showcase" })
       }),
-      onUploadCompleted: async () => {}
+      onUploadCompleted: async () => {
+        // Metadata persistence is intentionally left to the app layer.
+        // For a shared public library, pair Blob with Supabase/Postgres/KV.
+      }
     });
     return response.status(200).json(jsonResponse);
   } catch (error) {

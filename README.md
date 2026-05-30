@@ -2,38 +2,64 @@
 
 React/Vite showcase site for the CATL investment team's AI-enabled investment memo workflow.
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fwoshilalayang1125-dotcom%2Fim-ai-showcase&project-name=im-ai-showcase&repository-name=im-ai-showcase&framework=vite&build-command=npm%20run%20build&output-directory=dist)
-
-## Deployment model
+## Current deployment model
 
 - GitHub stores source code only.
 - Vercel deploys the React/Vite site.
 - Large original project files should live in Vercel Blob, not GitHub.
-- Vercel Blob upload is wired through `api/upload-token.js`; configure `BLOB_READ_WRITE_TOKEN` in Vercel before using upload.
+- The local workspace contains a full `public/uploads` package for local/static testing, but it is excluded from GitHub because several files exceed GitHub's normal file-size limits.
 
 ## Run locally
 
-```bash
+```powershell
 npm install
 npm run dev
 ```
 
-Open `http://localhost:3000`.
+Open:
+
+```text
+http://localhost:3000
+```
+
+## Import into Replit
+
+Upload or import this folder as a Node.js / React project in Replit.
+
+Use:
+
+```text
+npm install
+npm run dev
+```
+
+The app includes:
+
+- React frontend
+- Express backend
+- JSON APIs for SOP, Skills, Cases, Artifacts
+- Public file upload endpoint
+- Manifest import endpoint
+- Seed data copied from `frontend_data_contract.json`
+- Asset index copied from `asset_manifest.json`
 
 ## Deploy to Vercel
 
-Recommended route:
+Vercel should use:
 
-1. Open the Deploy with Vercel button above, or import this repo in Vercel.
-2. Use Framework `Vite`.
-3. Use Build Command `npm run build`.
-4. Use Output Directory `dist`.
-5. Create a Vercel Blob store if upload is needed.
-6. Add `BLOB_READ_WRITE_TOKEN` to the Vercel project environment variables.
-7. Redeploy.
+- Framework: Vite
+- Build Command: `npm run build`
+- Output Directory: `dist`
 
-The first GitHub version uses compact seed data. Full original files should be uploaded to Vercel Blob and indexed as artifact metadata.
+The Vercel version serves seed data from `public/data`. Public original files should be uploaded to Vercel Blob and indexed in the app metadata.
 
-## Supabase metadata direction
+Dynamic upload in Vercel uses Vercel Blob when the deployment has `BLOB_READ_WRITE_TOKEN` configured. Files persist in Blob, while the v1 browser metadata index is kept in localStorage. For a shared public metadata index across users, pair Blob with Supabase/Postgres/KV.
 
-Supabase is not required for the first deployment. If added later, use it for shared metadata tables such as projects, SOP steps, artifacts, versions, and Blob URLs.
+## Replit
+
+The app can still run in Replit with:
+
+```text
+npm install
+npm run dev
+```

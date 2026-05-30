@@ -1,1 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720"><rect width="1200" height="720" fill="#f5f7fa"/><rect x="50" y="50" width="1100" height="620" rx="18" fill="#fff" stroke="#dfe5ee"/><text x="86" y="105" font-family="Microsoft YaHei,Arial" font-size="32" font-weight="700" fill="#111827">案例复盘视图</text><rect x="86" y="150" width="260" height="450" rx="12" fill="#f8fafc" stroke="#dfe5ee"/><text x="118" y="205" font-family="Microsoft YaHei,Arial" font-size="20" font-weight="700" fill="#005bbb">SOP 步骤导航</text><text x="118" y="270" font-family="Microsoft YaHei,Arial" font-size="17" fill="#344054">资料池与 datapack</text><text x="118" y="320" font-family="Microsoft YaHei,Arial" font-size="17" fill="#344054">投资逻辑 PDF</text><text x="118" y="370" font-family="Microsoft YaHei,Arial" font-size="17" fill="#344054">PPT 生成指导文件</text><text x="118" y="420" font-family="Microsoft YaHei,Arial" font-size="17" fill="#344054">Slide 图片生成</text><rect x="390" y="150" width="690" height="450" rx="12" fill="#fff" stroke="#dfe5ee"/><text x="430" y="205" font-family="Microsoft YaHei,Arial" font-size="24" font-weight="700" fill="#111827">当前步骤证据链</text><rect x="430" y="250" width="180" height="90" rx="8" fill="#eaf3ff"/><text x="460" y="304" font-family="Microsoft YaHei,Arial" font-size="18" fill="#005bbb">输入文件</text><rect x="650" y="250" width="180" height="90" rx="8" fill="#fff7ed"/><text x="680" y="304" font-family="Microsoft YaHei,Arial" font-size="18" fill="#b54708">调用 Skill</text><rect x="870" y="250" width="160" height="90" rx="8" fill="#ecfdf3"/><text x="900" y="304" font-family="Microsoft YaHei,Arial" font-size="18" fill="#027a48">输出文件</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720">
+  <rect width="1200" height="720" fill="#f5f7fa"/>
+  <rect x="50" y="50" width="1100" height="620" rx="18" fill="#fff" stroke="#dfe5ee"/>
+  <text x="86" y="105" font-family="Microsoft YaHei,Arial" font-size="32" font-weight="700" fill="#111827">案例复盘视图</text>
+  <rect x="86" y="150" width="260" height="450" rx="12" fill="#f8fafc" stroke="#dfe5ee"/>
+  <text x="118" y="205" font-family="Microsoft YaHei,Arial" font-size="20" font-weight="700" fill="#005bbb">SOP 步骤导航</text>
+  <g font-family="Microsoft YaHei,Arial" font-size="17" fill="#344054">
+    <text x="118" y="270">资料池与 datapack</text><text x="118" y="320">投资逻辑 PDF</text><text x="118" y="370">PPT 生成指导文件</text><text x="118" y="420">Slide 图片生成</text><text x="118" y="470">贴图版 PPT</text>
+  </g>
+  <rect x="390" y="150" width="690" height="450" rx="12" fill="#fff" stroke="#dfe5ee"/>
+  <text x="430" y="205" font-family="Microsoft YaHei,Arial" font-size="24" font-weight="700" fill="#111827">当前步骤证据链</text>
+  <g font-family="Microsoft YaHei,Arial" font-size="18">
+    <rect x="430" y="250" width="180" height="90" rx="8" fill="#eaf3ff"/><text x="460" y="304" fill="#005bbb">输入文件</text>
+    <rect x="650" y="250" width="180" height="90" rx="8" fill="#fff7ed"/><text x="680" y="304" fill="#b54708">调用 Skill</text>
+    <rect x="870" y="250" width="160" height="90" rx="8" fill="#ecfdf3"/><text x="900" y="304" fill="#027a48">输出文件</text>
+    <rect x="430" y="390" width="600" height="120" rx="8" fill="#f8fafc" stroke="#dfe5ee"/>
+    <text x="460" y="442" fill="#344054">缩略图 + 文件表格 + 可预览 / 可下载状态</text>
+  </g>
+</svg>

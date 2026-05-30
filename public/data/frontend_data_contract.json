@@ -1,24 +1,492 @@
 {
   "schemaVersion": "1.0.0",
+  "purpose": "Frontend data contract for the CATL investment team AI workflow React showcase.",
+  "entities": {
+    "SOPStep": {
+      "id": "string",
+      "order": "number",
+      "title": "string",
+      "shortTitle": "string",
+      "description": "string",
+      "inputs": "string[]",
+      "actions": "string[]",
+      "outputs": "string[]",
+      "humanReviewPoints": "string[]",
+      "relatedSkills": "string[]"
+    },
+    "SkillProfile": {
+      "id": "string",
+      "name": "string",
+      "definition": "string",
+      "stage": "string",
+      "inputs": "string[]",
+      "outputs": "string[]",
+      "role": "string",
+      "constraints": "string[]",
+      "qualityGates": "string[]",
+      "creationAndTuning": "string[]"
+    },
+    "CaseProject": {
+      "id": "string",
+      "name": "string",
+      "shortName": "string",
+      "summary": "string",
+      "industry": "string",
+      "caseSteps": "CaseStep[]"
+    },
+    "CaseStep": {
+      "id": "string",
+      "sopStepId": "string",
+      "title": "string",
+      "description": "string",
+      "skillUsed": "string[]",
+      "inputArtifacts": "Artifact[]",
+      "outputArtifacts": "Artifact[]",
+      "iterations": "Iteration[]",
+      "finalResultSummary": "string"
+    },
+    "Artifact": {
+      "id": "string",
+      "projectId": "string",
+      "sopStepId": "string",
+      "title": "string",
+      "fileName": "string",
+      "fileType": "pdf | pptx | docx | xlsx | md | png | jpg | other",
+      "url": "string",
+      "thumbnailUrl": "string | optional",
+      "version": "string | optional",
+      "description": "string",
+      "isFinal": "boolean"
+    },
+    "Iteration": {
+      "id": "string",
+      "version": "string",
+      "date": "string | optional",
+      "changeSummary": "string",
+      "artifacts": "Artifact[]"
+    }
+  },
   "sampleData": {
     "sopSteps": [
-      {"id":"sop-01-material-collection","order":1,"title":"项目资料收集","shortTitle":"资料收集","description":"收集 BP、访谈纪要、技术文档、产品资料和财务资料，形成云端与本地资料池。","inputs":["公司 BP","访谈纪要","技术文档","产品资料","财务资料"],"actions":["整理资料","同步 Google Drive","同步本地 datapack"],"outputs":["云端资料池","本地 datapack"],"humanReviewPoints":["资料完整性","命名可追溯","关键缺口"],"relatedSkills":[]},
-      {"id":"sop-02-research-expansion","order":2,"title":"大模型行研补充","shortTitle":"行研补充","description":"用 ChatGPT/Gemini 检索资料池和互联网，补充行业、技术、市场和公司研究。","inputs":["资料池","互联网公开资料"],"actions":["行业扫描","深度研究","来源记录"],"outputs":["研究报告","补充资料"],"humanReviewPoints":["来源清晰","数据可验证","推导可复现"],"relatedSkills":[]},
-      {"id":"sop-03-core-logic","order":3,"title":"投资人梳理核心主投资逻辑","shortTitle":"主逻辑","description":"投资人基于资料池人工梳理 3-5 条核心主投资逻辑。","inputs":["全部资料池","补充研究"],"actions":["人工判断","归纳核心变量"],"outputs":["3-5 条主投资逻辑"],"humanReviewPoints":["是否有投资意义","是否能被证据支持"],"relatedSkills":[]},
-      {"id":"sop-04-logic-expansion","order":4,"title":"大模型扩展主逻辑与支撑子逻辑","shortTitle":"逻辑扩展","description":"让大模型基于资料池为每条主逻辑生成支撑子逻辑和证据路径。","inputs":["主投资逻辑","资料池"],"actions":["资料检索","子逻辑拆解","证据映射"],"outputs":["项目核心投资逻辑 PDF"],"humanReviewPoints":["避免跳步推理","标注弱证据"],"relatedSkills":[]},
-      {"id":"sop-05-three-md","order":5,"title":"生成三 md 投委材料输入包","shortTitle":"三 md","description":"调用 Ic Investment Memo Sop 生成投资逻辑框架、Slides 框架结构、逐页内容与证据表。","inputs":["核心投资逻辑 PDF","datapack"],"actions":["构建因果链","映射证据","输出三 md"],"outputs":["投资逻辑框架 md","Slides 框架 md","逐页证据表 md"],"humanReviewPoints":["主逻辑保留","标题结论导向","证据分级"],"relatedSkills":["ic-investment-memo-sop"]},
-      {"id":"sop-06-slide-images","order":6,"title":"生成 CATL 风格 Slide 图片","shortTitle":"Slide 图片","description":"调用 CATL Codex PPT 基于三 md 逐页生成 CATL 风格高密度 Slide 图片。","inputs":["三 md 文件"],"actions":["生成页面","筛选修正","重命名排序"],"outputs":["reference_images","图片清单"],"humanReviewPoints":["内容投委可见","页面清晰","无生成痕迹"],"relatedSkills":["catl-codex-ppt"]},
-      {"id":"sop-07-image2ppt","order":7,"title":"组装贴图版 PPT","shortTitle":"Image2PPT","description":"调用 Image2PPT 把排序后的图片高清组装为 16:9 贴图版 PPT。","inputs":["Slide 图片文件夹"],"actions":["自然排序","高清锐化","铺满 PPT"],"outputs":["贴图版 PPTX"],"humanReviewPoints":["页数一致","图片清晰","无裁切"],"relatedSkills":["image2ppt"]},
-      {"id":"sop-08-editable-ppt","order":8,"title":"Codia.AI 转可编辑 PPT","shortTitle":"可编辑 PPT","description":"把最终图片批量导入 Codia.AI，转为可编辑 PPT 供人工精修。","inputs":["最终 Slide 图片"],"actions":["导入 Codia.AI","转换可编辑 PPT"],"outputs":["可编辑 PPTX"],"humanReviewPoints":["图层可编辑","文字图表还原"],"relatedSkills":[]}
+      {
+        "id": "sop-01-material-collection",
+        "order": 1,
+        "title": "项目资料收集",
+        "shortTitle": "资料收集",
+        "description": "收集公司 BP、访谈纪要、技术文档、产品资料、财务资料等原始项目材料。",
+        "inputs": [
+          "公司 BP",
+          "访谈纪要",
+          "技术文档",
+          "产品资料",
+          "财务资料"
+        ],
+        "actions": [
+          "投资人整理资料",
+          "同步到 Google Drive",
+          "同步到本地项目 datapack"
+        ],
+        "outputs": [
+          "云端资料池",
+          "本地 datapack"
+        ],
+        "humanReviewPoints": [
+          "资料是否完整",
+          "文件命名是否可追溯",
+          "是否存在关键缺口"
+        ],
+        "relatedSkills": []
+      },
+      {
+        "id": "sop-02-research-expansion",
+        "order": 2,
+        "title": "大模型行研补充",
+        "shortTitle": "行研补充",
+        "description": "使用 ChatGPT、Gemini 等大模型调用资料池和互联网搜索，补充行业、技术、市场、公司信息。",
+        "inputs": [
+          "云端资料池",
+          "本地 datapack",
+          "互联网公开资料"
+        ],
+        "actions": [
+          "行业扫描",
+          "深度研究",
+          "数据交叉验证",
+          "来源记录"
+        ],
+        "outputs": [
+          "研究报告",
+          "补充资料",
+          "Excel/Word/PDF/md 文件"
+        ],
+        "humanReviewPoints": [
+          "数据来源是否清晰",
+          "推导是否可复现",
+          "是否区分事实、推断和假设"
+        ],
+        "relatedSkills": []
+      },
+      {
+        "id": "sop-03-core-logic",
+        "order": 3,
+        "title": "投资人梳理核心主投资逻辑",
+        "shortTitle": "主逻辑",
+        "description": "投资人基于更新后的资料池，手动梳理 3-5 条核心主投资逻辑。",
+        "inputs": [
+          "全部资料池",
+          "补充研究报告"
+        ],
+        "actions": [
+          "人工判断",
+          "归纳核心变量",
+          "形成主投资逻辑文本"
+        ],
+        "outputs": [
+          "3-5 条核心主投资逻辑"
+        ],
+        "humanReviewPoints": [
+          "逻辑是否有投资意义",
+          "是否能被证据支持",
+          "是否避免空泛判断"
+        ],
+        "relatedSkills": []
+      },
+      {
+        "id": "sop-04-logic-expansion",
+        "order": 4,
+        "title": "大模型扩展主逻辑与支撑子逻辑",
+        "shortTitle": "逻辑扩展",
+        "description": "把主投资逻辑输入大模型，让模型基于资料池搜索证据并输出每条主逻辑的支撑子逻辑。",
+        "inputs": [
+          "核心主投资逻辑",
+          "全部资料池"
+        ],
+        "actions": [
+          "资料池检索",
+          "事实到推理的支撑拆解",
+          "生成主逻辑 + 子逻辑框架"
+        ],
+        "outputs": [
+          "项目核心投资逻辑 PDF"
+        ],
+        "humanReviewPoints": [
+          "每条子逻辑是否有来源",
+          "是否存在跳步推理",
+          "是否需要补证"
+        ],
+        "relatedSkills": []
+      },
+      {
+        "id": "sop-05-three-md",
+        "order": 5,
+        "title": "输出三个指导 PPT 图片生成的 Markdown 文件",
+        "shortTitle": "PPT 生成指导文件",
+        "description": "调用 Ic Investment Memo Sop，把投资逻辑和 datapack 转成三个 Markdown 文件：投资逻辑框架、Slides 框架结构、逐页内容与证据表。它们不是给领导直接阅读的最终材料，而是指导后续生成 PPT 图片的结构化输入。",
+        "inputs": [
+          "项目核心投资逻辑 PDF",
+          "本地 datapack"
+        ],
+        "actions": [
+          "拆解投资逻辑",
+          "组织 Slides 结构",
+          "沉淀证据表",
+          "形成 PPT 图片生成指导文件"
+        ],
+        "outputs": [
+          "投资逻辑框架 Markdown",
+          "Slides 框架结构 Markdown",
+          "逐页内容与证据表 Markdown"
+        ],
+        "humanReviewPoints": [
+          "主逻辑是否被保留",
+          "页标题是否结论导向",
+          "弱证据是否被显式标注"
+        ],
+        "relatedSkills": [
+          "ic-investment-memo-sop"
+        ]
+      },
+      {
+        "id": "sop-06-slide-images",
+        "order": 6,
+        "title": "生成 CATL 风格 Slide 图片",
+        "shortTitle": "Slide 图片",
+        "description": "调用 CATL Codex PPT Skill，读取前一步形成的 PPT 图片生成指导文件，逐页生成 CATL 风格高密度 Slide 图片。",
+        "inputs": [
+          "PPT 图片生成指导文件"
+        ],
+        "actions": [
+          "逐页理解内容",
+          "生成图片提示",
+          "生成并筛选 Slide 图片",
+          "按序号和标题重命名"
+        ],
+        "outputs": [
+          "reference_images 文件夹",
+          "Slide 图片清单"
+        ],
+        "humanReviewPoints": [
+          "内容是否符合投委可见标准",
+          "版式是否清晰",
+          "是否有水印、路径或生成提示残留"
+        ],
+        "relatedSkills": [
+          "catl-codex-ppt"
+        ]
+      },
+      {
+        "id": "sop-07-image2ppt",
+        "order": 7,
+        "title": "组装贴图版 PPT",
+        "shortTitle": "Image2PPT",
+        "description": "调用 Image2PPT，把排序后的 Slide 图片高清组装成 16:9 贴图版 PPT。",
+        "inputs": [
+          "排序后的 Slide 图片文件夹"
+        ],
+        "actions": [
+          "自然排序",
+          "高清锐化",
+          "逐页铺满 PPT",
+          "验证页数和比例"
+        ],
+        "outputs": [
+          "贴图版 PPTX",
+          "高清图片文件夹"
+        ],
+        "humanReviewPoints": [
+          "页数是否一致",
+          "图片是否铺满",
+          "文字是否清晰",
+          "是否有裁切问题"
+        ],
+        "relatedSkills": [
+          "image2ppt"
+        ]
+      },
+      {
+        "id": "sop-08-editable-ppt",
+        "order": 8,
+        "title": "Codia.AI 转可编辑 PPT",
+        "shortTitle": "可编辑 PPT",
+        "description": "把最终图片批量导入 Codia.AI，转成上百个矢量图层组成的可编辑 PPT，便于后续格式和内容细节调整。",
+        "inputs": [
+          "最终 Slide 图片"
+        ],
+        "actions": [
+          "批量导入 Codia.AI",
+          "转换为可编辑 PPT",
+          "人工修正细节"
+        ],
+        "outputs": [
+          "可编辑 PPTX"
+        ],
+        "humanReviewPoints": [
+          "图层是否可编辑",
+          "文字和图表是否还原",
+          "是否需要人工精修"
+        ],
+        "relatedSkills": []
+      }
     ],
     "skills": [
-      {"id":"ic-investment-memo-sop","name":"Ic Investment Memo Sop","definition":"把投资逻辑文件和 datapack 转成三 md 投委材料输入包。","stage":"核心投资逻辑确定后","inputs":["投资逻辑文件","datapack","研究资料"],"outputs":["投资逻辑框架 md","Slides 框架 md","逐页内容与证据表 md"],"role":"把人工投资判断重构成可生成投委材料的因果链和证据矩阵。","constraints":["保留用户逻辑顺序","区分证据强弱"],"qualityGates":["逻辑一致","证据可追溯"],"creationAndTuning":["从项目复盘沉淀规则"]},
-      {"id":"catl-codex-ppt","name":"CATL Codex PPT","definition":"基于三 md 生成 CATL 风格高密度 Slide 图片。","stage":"三 md 完成后","inputs":["三 md","CATL 风格要求"],"outputs":["Slide 图片","图片 manifest"],"role":"把结构化投委内容转成可检查、可迭代的视觉页面。","constraints":["CATL 蓝色体系","无本地路径或生成提示"],"qualityGates":["图片清晰","标题为投资结论"],"creationAndTuning":["根据案例迭代页面密度"]},
-      {"id":"image2ppt","name":"Image2PPT","definition":"把排序后的 Slide 图片高清组装成 16:9 贴图版 PPT。","stage":"Slide 图片确认后","inputs":["Slide 图片文件夹"],"outputs":["贴图版 PPTX"],"role":"快速形成可传阅、可批注、可作为 Codia.AI 输入的 PPT。","constraints":["自然排序","一页一图","不拉伸"],"qualityGates":["页数一致","图片铺满"],"creationAndTuning":["根据模糊、裁切、排序问题调整"]}
+      {
+        "id": "ic-investment-memo-sop",
+        "name": "Ic Investment Memo Sop",
+        "definition": "把投资逻辑文件和 datapack 转成三个用于指导 PPT 图片生成的 Markdown 文件。",
+        "stage": "核心投资逻辑确定后，Slide 图片生成前",
+        "inputs": [
+          "投资逻辑 PDF/Word/md",
+          "本地 datapack",
+          "研究资料",
+          "访谈纪要"
+        ],
+        "outputs": [
+          "投资逻辑框架 Markdown",
+          "Slides 框架结构 Markdown",
+          "逐页内容与证据表 Markdown"
+        ],
+        "role": "把人工投资判断重构成可生成投委材料的因果链和证据矩阵。",
+        "constraints": [
+          "保留用户最新投资逻辑顺序",
+          "区分强/中/弱证据",
+          "弱证据不得作为可见硬结论",
+          "页标题必须结论导向"
+        ],
+        "qualityGates": [
+          "主逻辑完整保留",
+          "证据与页内容一一对应",
+          "弱证据显式标注",
+          "输出能直接指导后续 Slide 图片生成"
+        ],
+        "creationAndTuning": [
+          "从项目复盘中沉淀规则",
+          "把失败样例转成约束",
+          "持续更新证据标准和页标题规则"
+        ]
+      },
+      {
+        "id": "catl-codex-ppt",
+        "name": "CATL Codex PPT",
+        "definition": "读取 PPT 图片生成指导文件，逐页生成 CATL 风格高密度 Slide 图片。",
+        "stage": "PPT 图片生成指导文件确认后",
+        "inputs": [
+          "PPT 图片生成指导文件",
+          "CATL 模板约束",
+          "项目参考图片"
+        ],
+        "outputs": [
+          "逐页 Slide 图片",
+          "图片 manifest",
+          "验证报告或预览图"
+        ],
+        "role": "把结构化投委内容转成可检查、可迭代的视觉页面。",
+        "constraints": [
+          "使用 CATL 蓝色视觉体系",
+          "可见内容只放投委面对内容",
+          "不得出现本地路径、生成提示、水印、制作说明",
+          "内容页标题保留 CATL 模板结构"
+        ],
+        "qualityGates": [
+          "图片清晰",
+          "内容密度自然",
+          "标题是投资结论",
+          "页面无重叠和裁切",
+          "无生产者标记"
+        ],
+        "creationAndTuning": [
+          "根据子虔、扬贺扬等项目迭代页面密度",
+          "将审核意见固化为提示词和规则",
+          "持续更新模板和视觉约束"
+        ]
+      },
+      {
+        "id": "image2ppt",
+        "name": "Image2PPT",
+        "definition": "把排序后的 Slide 图片高清组装成 16:9 贴图版 PPT。",
+        "stage": "Slide 图片确认后，Codia.AI 转可编辑 PPT 前",
+        "inputs": [
+          "Slide 图片文件夹"
+        ],
+        "outputs": [
+          "贴图版 PPTX",
+          "高清处理后的图片文件夹"
+        ],
+        "role": "快速形成可传阅、可批注、可作为 Codia.AI 输入的 PPT 版本。",
+        "constraints": [
+          "按自然文件名排序",
+          "不拉伸不变形",
+          "16:9 页面",
+          "一页一图",
+          "默认不做可编辑对象重建"
+        ],
+        "qualityGates": [
+          "页数等于图片数",
+          "图片覆盖整页",
+          "清晰度足够",
+          "不存在错误裁切"
+        ],
+        "creationAndTuning": [
+          "根据 PPT 模糊、裁切、排序问题调整脚本",
+          "增加本地锐化和高清处理步骤",
+          "沉淀验证清单"
+        ]
+      }
     ],
     "caseProjects": [
-      {"id":"zq","name":"子虔科技","shortName":"子虔","summary":"围绕 CAD 工具向设计 Copilot 升级的立项报告生成案例。","industry":"AI 软件 / 工业软件","caseSteps":[{"id":"zq-three-md","sopStepId":"sop-05-three-md","title":"子虔三 md 多版本生成","description":"基于投资逻辑和 datapack 迭代生成自然高密度三 md。","skillUsed":["ic-investment-memo-sop"],"inputArtifacts":[],"outputArtifacts":[],"iterations":[],"finalResultSummary":"形成可供 Slide 图片生成的三 md 输入包。"}]},
-      {"id":"yhy","name":"扬贺扬微电子","shortName":"扬贺扬","summary":"围绕 2D NAND 和边缘 AI 存储机会的立项报告生成案例。","industry":"AI 硬件 / 半导体存储","caseSteps":[{"id":"yhy-full-images","sopStepId":"sop-06-slide-images","title":"扬贺扬全套 Slide 图片生成","description":"基于三 md v5 生成全套测试图和贴图 PPT 输入图。","skillUsed":["catl-codex-ppt"],"inputArtifacts":[],"outputArtifacts":[],"iterations":[],"finalResultSummary":"形成 24 页全套图片和高清贴图 PPT。"}]}
+      {
+        "id": "zq",
+        "name": "子虔科技",
+        "shortName": "子虔",
+        "summary": "围绕 CAD 工具向设计 Copilot 升级的立项报告生成案例。",
+        "industry": "AI 软件 / 工业软件",
+        "caseSteps": [
+          {
+            "id": "zq-three-md",
+            "sopStepId": "sop-05-three-md",
+            "title": "子虔三个指导 PPT 图片生成的 .md 文件 多版本生成",
+            "description": "基于投资逻辑和 datapack 迭代生成自然高密度三个指导 PPT 图片生成的 .md 文件。",
+            "skillUsed": [
+              "ic-investment-memo-sop"
+            ],
+            "inputArtifacts": [],
+            "outputArtifacts": [
+              {
+                "id": "zq-md-v5-01",
+                "projectId": "zq",
+                "sopStepId": "sop-05-three-md",
+                "title": "投委材料投资逻辑框架通用 v5",
+                "fileName": "01_投委材料投资逻辑框架_通用v5.md",
+                "fileType": "md",
+                "url": "/uploads/zq/three-md/01_投委材料投资逻辑框架_通用v5.md",
+                "version": "v5",
+                "description": "子虔最终阶段三个指导 PPT 图片生成的 .md 文件 输入包之一。",
+                "isFinal": true
+              }
+            ],
+            "iterations": [
+              {
+                "id": "zq-three-md-v2-v5",
+                "version": "v2-v5",
+                "changeSummary": "从自然高密度优化 v2 迭代到通用 v5，逐步强化主逻辑、页标题和证据表。",
+                "artifacts": []
+              }
+            ],
+            "finalResultSummary": "形成可供 Slide 图片生成的三个指导 PPT 图片生成的 .md 文件 输入包。"
+          }
+        ]
+      },
+      {
+        "id": "yhy",
+        "name": "扬贺扬微电子",
+        "shortName": "扬贺扬",
+        "summary": "围绕 2D NAND 和边缘 AI 存储机会的立项报告生成案例。",
+        "industry": "AI 硬件 / 半导体存储",
+        "caseSteps": [
+          {
+            "id": "yhy-full-images",
+            "sopStepId": "sop-06-slide-images",
+            "title": "扬贺扬全套 Slide 图片生成",
+            "description": "基于三个指导 PPT 图片生成的 .md 文件 v5 生成全套测试图、高密度图和最终贴图 PPT 输入图。",
+            "skillUsed": [
+              "catl-codex-ppt"
+            ],
+            "inputArtifacts": [],
+            "outputArtifacts": [
+              {
+                "id": "yhy-slide-01",
+                "projectId": "yhy",
+                "sopStepId": "sop-06-slide-images",
+                "title": "核心投资逻辑",
+                "fileName": "slide_01_core_investment_logic.png",
+                "fileType": "png",
+                "url": "/uploads/yhy/reference_images/slide_01_core_investment_logic.png",
+                "thumbnailUrl": "/uploads/yhy/reference_images/slide_01_core_investment_logic.png",
+                "version": "v5",
+                "description": "扬贺扬 v5 全套测试图首页。",
+                "isFinal": true
+              }
+            ],
+            "iterations": [
+              {
+                "id": "yhy-v5-high-density",
+                "version": "v5 高密度迭代 2",
+                "date": "2026-05-27",
+                "changeSummary": "从测试图到高密度图再到全套 24 页图，强化页内信息密度和可读性。",
+                "artifacts": []
+              }
+            ],
+            "finalResultSummary": "形成 24 页全套图片和高清贴图 PPT。"
+          }
+        ]
+      }
     ]
+  },
+  "recommendedApiShape": {
+    "GET /api/sop": "Return SOPStep[]",
+    "GET /api/skills": "Return SkillProfile[]",
+    "GET /api/cases": "Return CaseProject[] summary",
+    "GET /api/cases/:id": "Return CaseProject with full caseSteps",
+    "GET /api/artifacts": "Return filterable Artifact[]",
+    "POST /api/upload": "Upload public files and register Artifact metadata"
   }
 }
