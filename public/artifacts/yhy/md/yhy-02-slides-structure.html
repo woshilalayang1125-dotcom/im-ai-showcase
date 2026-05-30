@@ -1,57 +1,348 @@
-<!doctype html><html><head><meta charset="utf-8"><style>body{font-family:"Microsoft YaHei",Arial,sans-serif;margin:40px;color:#111827;line-height:1.6}h1{font-size:24px;color:#005bbb;border-bottom:2px solid #005bbb;padding-bottom:10px}h2{font-size:20px;margin-top:28px;color:#111827}h3{font-size:17px;color:#344054}table{border-collapse:collapse;width:100%;margin:16px 0;font-size:13px}td,th{border:1px solid #d0d5dd;padding:7px;vertical-align:top}th{background:#eaf3ff;color:#005bbb}pre{white-space:pre-wrap;background:#f8fafc;border:1px solid #dfe5ee;padding:12px;border-radius:6px}code{font-family:Consolas,monospace}.meta{color:#667085;font-size:13px;margin-bottom:20px}</style><title>yhy-02-slides-structure</title></head><body><h1>yhy-02-slides-structure?.md ???? PDF ????</h1><div class="meta">?????? .md ?????????? PDF????????????????</div><h1>扬贺扬微电子立项报告 Slides 框架结构_自然高密度优化v5</h1>
-<p>适用位置：扬贺扬项目立项报告 / 后续 CATL 风格图片生成与可编辑PPT重建。  </p>
-<p>页数建议：24页，保持 **投资逻辑1页 + 行业分析11页 + 公司分析8页 + 财务估值风险4页**。  </p>
-<p>编制原则：每页标题必须是观点句；行业和公司章节均围绕优化版PDF四大逻辑展开，但图片中不刻意写“证明闭环”。</p>
-<p>---</p>
-<h2>0. 一页投资逻辑的固定组织</h2>
-<p>Slide 1必须参考“子虔科技_260526v1”第4页的组织形式：中心判断 + 四个逻辑模块。四个模块必须严格对应优化版PDF四条主逻辑。</p>
-<p>| 模块 | 必须出现的主逻辑 | 模块内支撑点 |</p>
-<p>|---|---|---|</p>
-<p>| 逻辑一 | AI存储大周期推动海外巨头成熟2D NAND产品EOL，供给真空下国产厂商机会浮现 | AI/HBM/SSD抬高机会成本；成熟平台EOL；需求未消失；3D短期难替代；客户提前二供认证 |</p>
-<p>| 逻辑二 | 扬贺扬是国内稀缺的SLC NAND窗口型标的，可借缺货周期实现客户快速渗透 | SLC市场足够支撑细分龙头；网通/工控/车载/AIoT场景刚性；中兴/共进链条验证；竞争胜负手是认证和供货 |</p>
-<p>| 逻辑三 | 扬贺扬的MLC是中期alpha，若量产兑现，有望成为国内少数能承接2D NAND高容量替代窗口的企业 | 容量升级需求；MLC供给收缩；技术门槛高于SLC；必须按流片、良率、可靠性、认证、订单验证 |</p>
-<p>| 逻辑四 | 团队具备跨区域存储产业经验，中国、韩国、台湾布局有助于技术、产能和客户协同 | 韩国NAND经验；台湾主控/封测/供应链；大陆客户/代工；价值必须落到工程化交付 |</p>
-<p>---</p>
-<h2>1. 建议页序总表</h2>
-<p>|  页码 | 章节    | 标题建议                             | 核心观点                                                               | 主视觉           | 证据要求                     |</p>
-<p>| --: | ----- | -------------------------------- | ------------------------------------------------------------------ | ------------- | ------------------------ |</p>
-<p>|   1 | 投资逻辑  | 四条主线共同指向：扬贺扬的机会在EOL窗口兑现，而非AI直接拉动 | 用优化版PDF四大逻辑一页讲清：EOL供给真空、SLC窗口型标的、MLC中期alpha、跨区域工程化底座               | 中心判断+四模块逻辑图   | 优化版PDF                   |</p>
-<p>|   2 | 行业分析  | AI存储高回报正在把成熟2D NAND挤出大厂资源表       | 大厂资源向HBM、先进DRAM、企业级SSD和高层数3D NAND迁移，成熟2D NAND机会成本显著上升              | 资源迁移因果链       | 优化版PDF、外部EOL报道           |</p>
-<p>|   3 | 行业分析  | EOL进入可排期窗口后，客户二供认证必须提前启动         | Kioxia LTB/最终出货、MLC供给下降和大厂资源收缩，让客户在2026-2028同步做锁货、涨价接受和国产二供导入      | EOL时间轴+客户动作链  | Kioxia EOL、TrendForce、访谈 |</p>
-<p>|   4 | 行业分析  | 需求收缩到小容量高可靠场景后，2D NAND仍有不可替代性    | 网通、工控、电力、医疗、车载、AIoT等场景仍需小容量、高可靠、长供货周期存储                            | 场景-容量-刚性矩阵    | 优化版PDF、项目PPT             |</p>
-<p>|   5 | 行业分析  | 3D NAND能压住长期价格上限，却难改造短期存量平台      | 容量、可靠性、系统兼容、认证周期和BOM占比决定客户涨价窗口中更可能导入二供，而非重构到3D                     | 五因素替代障碍图      | 优化版PDF、中兴访谈              |</p>
-<p>|   6 | 行业分析  | 百亿美元级利基市场足够容纳少数国产细分龙头            | 2D SLC约27亿美元、2D MLC约80亿美元、全球2D NAND约110亿美元、中国约45亿美元，市场不大但足以支撑窗口型企业 | 市场规模拆分图       | 项目PPT、国联尽调               |</p>
-<p>|   7 | 行业分析  | 网通贡献SLC放量起点，工控车载决定利润质量           | 不同下游的价值不同：网通给数量和率先替换，工控/电力/医疗/车载给认证粘性，AIoT给标准SKU现金流                | 场景价值矩阵        | 中兴访谈、国联尽调、项目PPT          |</p>
-<p>|   8 | 行业分析  | SLC竞争不会只拼国产身份，客户认证和供货能力决定份额      | 兆易、东芯、普冉/SHM、江波龙/佰维等已有布局，扬贺扬必须用客户、产能和MLC延展证明差异                     | 竞对能力矩阵        | 优化版PDF、项目PPT             |</p>
-<p>|   9 | 行业分析  | 容量升级把MLC/eMMC变成比SLC更高弹性的中期窗口     | WiFi7/8、海外网关插件、端侧AI和本地缓存推动部分设备从1-4Gb SLC迁向GB级MLC/eMMC              | SLC到MLC升级路径   | 优化版PDF、中兴访谈              |</p>
-<p>|  10 | 行业分析  | MLC供给收缩越尖锐，越考验良率、ECC和测试Know-how  | MLC供给下降与可靠性需求并存，但四电平、电压窗口、读写干扰、ECC/LDPC和CP测试把门槛显著抬高                | 供给缺口+技术门槛双轴图  | TrendForce、优化版PDF        |</p>
-<p>|  11 | 行业分析  | 窗口最终奖励工程化交付能力，而不是单点设计能力          | 能吃到窗口的企业必须具备量产、产能、客户认证、质量、主控固件、CP测试和长期供货                           | 窗口型企业画像       | 优化版PDF                   |</p>
-<p>|  12 | 行业分析  | 价格红利会退潮，长期份额沉淀在产品线和供货稳定性         | 短期EOL涨价只是入口，长期价值取决于SLC份额沉淀、MLC/eMMC延展和供应链稳定                        | 短中长期演进路径      | 优化版PDF                   |</p>
-<p>|  13 | 公司分析  | 扬贺扬从16nm SLC切入，产品和客户基础正卡在本轮窗口上   | 公司2016年成立，从通信及嵌入式SLC切入，当前产品、客户和MLC规划与本轮2D NAND窗口直接相关               | 沿革+产品+场景+能力矩阵 | 项目PPT、国联尽调               |</p>
-<p>|  14 | 公司分析  | 16/19nm SLC量产让公司具备窗口期前的可交付产品     | 公司已量产16/19nm SLC，覆盖1Gb-8Gb及3.3V/1.8V，能对应最先发生的SLC二供需求               | 产品规格矩阵        | 项目PPT、国联尽调               |</p>
-<p>|  15 | 公司分析  | 中兴链条同时验证了需求刚性、涨价承受和替换周期          | 中兴访谈确认应用、规格、0.8-1.0亿颗需求、价格数倍上涨、质量无重大投诉和半年到一年导入周期                   | 中兴证据链图        | 中兴访谈                     |</p>
-<p>|  16 | 公司分析  | 客户穿透增强终端流向证据，但分销口径仍需穿透确认         | 客户穿透显示中兴、H代工厂、海外代工厂等流向，但公司答复称目前均为分销模式，不能直接等同终端design-in            | 客户穿透金额表       | 客户穿透图、公司答复               |</p>
-<p>|  17 | 公司分析  | ASP跃升说明SLC窗口已进报表，但也放大周期回落风险      | NAND ASP从2025年4.65元/颗升至2026Q1 13.14元/颗，窗口已兑现到财务，但需测试价格正常化          | 量价柱线图         | 价格及销量变化.xlsx             |</p>
-<p>|  18 | 公司分析  | MLC只有跨过流片、良率和认证，才会从故事变成alpha     | MLC/eMMC是2026-2027关键期权，需逐项验证流片、CP map、良率、可靠性、客户认证和订单               | 里程碑漏斗         | 优化版PDF、项目PPT             |</p>
-<p>|  19 | 公司分析  | 颗粒+主控+固件+测试闭环决定平台化空间             | MLC/eMMC价值来自系统方案能力，扬贺扬若打通颗粒、主控、固件、ECC、坏块管理、CP测试和客户适配，估值才上移         | 方案闭环图         | 优化版PDF、项目PPT             |</p>
-<p>|  20 | 公司分析  | 跨区域团队价值只有落到供应链和CP测试才可转成壁垒        | 韩国NAND经验、台湾控制器/封测/供应链、大陆客户/代工资源必须形成稳定交付闭环                          | 跨区域能力闭环       | 优化版PDF、国联尽调              |</p>
-<p>|  21 | 财务与预测 | 增长预测的关键不是线性外推，而是价格、产能和MLC三变量     | 公司高增长预测需拆成SLC价格、销量/产能、MLC兑现三变量，并按保守/基准/乐观表达                        | 情景预测表         | 公司答复、财务数据                |</p>
-<p>|  22 | 估值    | 50亿投前估值需要分层消化SLC利润与MLC期权         | 投前50亿应拆成SLC周期利润、MLC/eMMC期权和平台化溢价，不能直接年化2026Q1高毛利                   | 分层估值桥         | 公司答复、可比公司                |</p>
-<p>|  23 | 风险提示  | 最大的下修风险来自周期利润和技术期权被提前资本化         | 价格回落、客户穿透不足、MLC延期、供应链不确定和上市路径是核心风险                                 | 风险触发表         | 优化版PDF、公司答复              |</p>
-<p>|  24 | 投资建议  | 有条件推进的前提是交割前锁定四类硬证据              | 建议立项推进，但交割前需锁定SLC质量与客户、MLC、供应链、财务质量四类证据                            | 投资决策清单        | 全部核心证据                   |</p>
-<p>---</p>
-<h2>2. 行业与公司隐含呼应关系</h2>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>yhy-02-slides-structure?.md ? PDF ????</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="D:\OpenAI\Codex\IM AI\replit_ready_app\public\artifacts\md-print.css" />
+</head>
+<body><div class="note">???? .md ????????????? PDF ???????????? Markdown ???</div>
+<header id="title-block-header">
+<h1 class="title">yhy-02-slides-structure?.md ? PDF ????</h1>
+</header>
+<h1
+id="扬贺扬微电子立项报告-slides-框架结构_自然高密度优化v5">扬贺扬微电子立项报告
+Slides 框架结构_自然高密度优化v5</h1>
+<p>适用位置：扬贺扬项目立项报告 / 后续 CATL
+风格图片生成与可编辑PPT重建。<br />
+页数建议：24页，保持 <strong>投资逻辑1页 + 行业分析11页 + 公司分析8页 +
+财务估值风险4页</strong>。<br />
+编制原则：每页标题必须是观点句；行业和公司章节均围绕优化版PDF四大逻辑展开，但图片中不刻意写“证明闭环”。</p>
+<hr />
+<h2 id="0-一页投资逻辑的固定组织">0. 一页投资逻辑的固定组织</h2>
+<p>Slide 1必须参考“子虔科技_260526v1”第4页的组织形式：中心判断 +
+四个逻辑模块。四个模块必须严格对应优化版PDF四条主逻辑。</p>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>必须出现的主逻辑</th>
+<th>模块内支撑点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>逻辑一</td>
+<td>AI存储大周期推动海外巨头成熟2D
+NAND产品EOL，供给真空下国产厂商机会浮现</td>
+<td>AI/HBM/SSD抬高机会成本；成熟平台EOL；需求未消失；3D短期难替代；客户提前二供认证</td>
+</tr>
+<tr>
+<td>逻辑二</td>
+<td>扬贺扬是国内稀缺的SLC
+NAND窗口型标的，可借缺货周期实现客户快速渗透</td>
+<td>SLC市场足够支撑细分龙头；网通/工控/车载/AIoT场景刚性；中兴/共进链条验证；竞争胜负手是认证和供货</td>
+</tr>
+<tr>
+<td>逻辑三</td>
+<td>扬贺扬的MLC是中期alpha，若量产兑现，有望成为国内少数能承接2D
+NAND高容量替代窗口的企业</td>
+<td>容量升级需求；MLC供给收缩；技术门槛高于SLC；必须按流片、良率、可靠性、认证、订单验证</td>
+</tr>
+<tr>
+<td>逻辑四</td>
+<td>团队具备跨区域存储产业经验，中国、韩国、台湾布局有助于技术、产能和客户协同</td>
+<td>韩国NAND经验；台湾主控/封测/供应链；大陆客户/代工；价值必须落到工程化交付</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="1-建议页序总表">1. 建议页序总表</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">页码</th>
+<th>章节</th>
+<th>标题建议</th>
+<th>核心观点</th>
+<th>主视觉</th>
+<th>证据要求</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">1</td>
+<td>投资逻辑</td>
+<td>四条主线共同指向：扬贺扬的机会在EOL窗口兑现，而非AI直接拉动</td>
+<td>用优化版PDF四大逻辑一页讲清：EOL供给真空、SLC窗口型标的、MLC中期alpha、跨区域工程化底座</td>
+<td>中心判断+四模块逻辑图</td>
+<td>优化版PDF</td>
+</tr>
+<tr>
+<td style="text-align: right;">2</td>
+<td>行业分析</td>
+<td>AI存储高回报正在把成熟2D NAND挤出大厂资源表</td>
+<td>大厂资源向HBM、先进DRAM、企业级SSD和高层数3D NAND迁移，成熟2D
+NAND机会成本显著上升</td>
+<td>资源迁移因果链</td>
+<td>优化版PDF、外部EOL报道</td>
+</tr>
+<tr>
+<td style="text-align: right;">3</td>
+<td>行业分析</td>
+<td>EOL进入可排期窗口后，客户二供认证必须提前启动</td>
+<td>Kioxia
+LTB/最终出货、MLC供给下降和大厂资源收缩，让客户在2026-2028同步做锁货、涨价接受和国产二供导入</td>
+<td>EOL时间轴+客户动作链</td>
+<td>Kioxia EOL、TrendForce、访谈</td>
+</tr>
+<tr>
+<td style="text-align: right;">4</td>
+<td>行业分析</td>
+<td>需求收缩到小容量高可靠场景后，2D NAND仍有不可替代性</td>
+<td>网通、工控、电力、医疗、车载、AIoT等场景仍需小容量、高可靠、长供货周期存储</td>
+<td>场景-容量-刚性矩阵</td>
+<td>优化版PDF、项目PPT</td>
+</tr>
+<tr>
+<td style="text-align: right;">5</td>
+<td>行业分析</td>
+<td>3D NAND能压住长期价格上限，却难改造短期存量平台</td>
+<td>容量、可靠性、系统兼容、认证周期和BOM占比决定客户涨价窗口中更可能导入二供，而非重构到3D</td>
+<td>五因素替代障碍图</td>
+<td>优化版PDF、中兴访谈</td>
+</tr>
+<tr>
+<td style="text-align: right;">6</td>
+<td>行业分析</td>
+<td>百亿美元级利基市场足够容纳少数国产细分龙头</td>
+<td>2D SLC约27亿美元、2D MLC约80亿美元、全球2D
+NAND约110亿美元、中国约45亿美元，市场不大但足以支撑窗口型企业</td>
+<td>市场规模拆分图</td>
+<td>项目PPT、国联尽调</td>
+</tr>
+<tr>
+<td style="text-align: right;">7</td>
+<td>行业分析</td>
+<td>网通贡献SLC放量起点，工控车载决定利润质量</td>
+<td>不同下游的价值不同：网通给数量和率先替换，工控/电力/医疗/车载给认证粘性，AIoT给标准SKU现金流</td>
+<td>场景价值矩阵</td>
+<td>中兴访谈、国联尽调、项目PPT</td>
+</tr>
+<tr>
+<td style="text-align: right;">8</td>
+<td>行业分析</td>
+<td>SLC竞争不会只拼国产身份，客户认证和供货能力决定份额</td>
+<td>兆易、东芯、普冉/SHM、江波龙/佰维等已有布局，扬贺扬必须用客户、产能和MLC延展证明差异</td>
+<td>竞对能力矩阵</td>
+<td>优化版PDF、项目PPT</td>
+</tr>
+<tr>
+<td style="text-align: right;">9</td>
+<td>行业分析</td>
+<td>容量升级把MLC/eMMC变成比SLC更高弹性的中期窗口</td>
+<td>WiFi7/8、海外网关插件、端侧AI和本地缓存推动部分设备从1-4Gb
+SLC迁向GB级MLC/eMMC</td>
+<td>SLC到MLC升级路径</td>
+<td>优化版PDF、中兴访谈</td>
+</tr>
+<tr>
+<td style="text-align: right;">10</td>
+<td>行业分析</td>
+<td>MLC供给收缩越尖锐，越考验良率、ECC和测试Know-how</td>
+<td>MLC供给下降与可靠性需求并存，但四电平、电压窗口、读写干扰、ECC/LDPC和CP测试把门槛显著抬高</td>
+<td>供给缺口+技术门槛双轴图</td>
+<td>TrendForce、优化版PDF</td>
+</tr>
+<tr>
+<td style="text-align: right;">11</td>
+<td>行业分析</td>
+<td>窗口最终奖励工程化交付能力，而不是单点设计能力</td>
+<td>能吃到窗口的企业必须具备量产、产能、客户认证、质量、主控固件、CP测试和长期供货</td>
+<td>窗口型企业画像</td>
+<td>优化版PDF</td>
+</tr>
+<tr>
+<td style="text-align: right;">12</td>
+<td>行业分析</td>
+<td>价格红利会退潮，长期份额沉淀在产品线和供货稳定性</td>
+<td>短期EOL涨价只是入口，长期价值取决于SLC份额沉淀、MLC/eMMC延展和供应链稳定</td>
+<td>短中长期演进路径</td>
+<td>优化版PDF</td>
+</tr>
+<tr>
+<td style="text-align: right;">13</td>
+<td>公司分析</td>
+<td>扬贺扬从16nm SLC切入，产品和客户基础正卡在本轮窗口上</td>
+<td>公司2016年成立，从通信及嵌入式SLC切入，当前产品、客户和MLC规划与本轮2D
+NAND窗口直接相关</td>
+<td>沿革+产品+场景+能力矩阵</td>
+<td>项目PPT、国联尽调</td>
+</tr>
+<tr>
+<td style="text-align: right;">14</td>
+<td>公司分析</td>
+<td>16/19nm SLC量产让公司具备窗口期前的可交付产品</td>
+<td>公司已量产16/19nm
+SLC，覆盖1Gb-8Gb及3.3V/1.8V，能对应最先发生的SLC二供需求</td>
+<td>产品规格矩阵</td>
+<td>项目PPT、国联尽调</td>
+</tr>
+<tr>
+<td style="text-align: right;">15</td>
+<td>公司分析</td>
+<td>中兴链条同时验证了需求刚性、涨价承受和替换周期</td>
+<td>中兴访谈确认应用、规格、0.8-1.0亿颗需求、价格数倍上涨、质量无重大投诉和半年到一年导入周期</td>
+<td>中兴证据链图</td>
+<td>中兴访谈</td>
+</tr>
+<tr>
+<td style="text-align: right;">16</td>
+<td>公司分析</td>
+<td>客户穿透增强终端流向证据，但分销口径仍需穿透确认</td>
+<td>客户穿透显示中兴、H代工厂、海外代工厂等流向，但公司答复称目前均为分销模式，不能直接等同终端design-in</td>
+<td>客户穿透金额表</td>
+<td>客户穿透图、公司答复</td>
+</tr>
+<tr>
+<td style="text-align: right;">17</td>
+<td>公司分析</td>
+<td>ASP跃升说明SLC窗口已进报表，但也放大周期回落风险</td>
+<td>NAND ASP从2025年4.65元/颗升至2026Q1
+13.14元/颗，窗口已兑现到财务，但需测试价格正常化</td>
+<td>量价柱线图</td>
+<td>价格及销量变化.xlsx</td>
+</tr>
+<tr>
+<td style="text-align: right;">18</td>
+<td>公司分析</td>
+<td>MLC只有跨过流片、良率和认证，才会从故事变成alpha</td>
+<td>MLC/eMMC是2026-2027关键期权，需逐项验证流片、CP
+map、良率、可靠性、客户认证和订单</td>
+<td>里程碑漏斗</td>
+<td>优化版PDF、项目PPT</td>
+</tr>
+<tr>
+<td style="text-align: right;">19</td>
+<td>公司分析</td>
+<td>颗粒+主控+固件+测试闭环决定平台化空间</td>
+<td>MLC/eMMC价值来自系统方案能力，扬贺扬若打通颗粒、主控、固件、ECC、坏块管理、CP测试和客户适配，估值才上移</td>
+<td>方案闭环图</td>
+<td>优化版PDF、项目PPT</td>
+</tr>
+<tr>
+<td style="text-align: right;">20</td>
+<td>公司分析</td>
+<td>跨区域团队价值只有落到供应链和CP测试才可转成壁垒</td>
+<td>韩国NAND经验、台湾控制器/封测/供应链、大陆客户/代工资源必须形成稳定交付闭环</td>
+<td>跨区域能力闭环</td>
+<td>优化版PDF、国联尽调</td>
+</tr>
+<tr>
+<td style="text-align: right;">21</td>
+<td>财务与预测</td>
+<td>增长预测的关键不是线性外推，而是价格、产能和MLC三变量</td>
+<td>公司高增长预测需拆成SLC价格、销量/产能、MLC兑现三变量，并按保守/基准/乐观表达</td>
+<td>情景预测表</td>
+<td>公司答复、财务数据</td>
+</tr>
+<tr>
+<td style="text-align: right;">22</td>
+<td>估值</td>
+<td>50亿投前估值需要分层消化SLC利润与MLC期权</td>
+<td>投前50亿应拆成SLC周期利润、MLC/eMMC期权和平台化溢价，不能直接年化2026Q1高毛利</td>
+<td>分层估值桥</td>
+<td>公司答复、可比公司</td>
+</tr>
+<tr>
+<td style="text-align: right;">23</td>
+<td>风险提示</td>
+<td>最大的下修风险来自周期利润和技术期权被提前资本化</td>
+<td>价格回落、客户穿透不足、MLC延期、供应链不确定和上市路径是核心风险</td>
+<td>风险触发表</td>
+<td>优化版PDF、公司答复</td>
+</tr>
+<tr>
+<td style="text-align: right;">24</td>
+<td>投资建议</td>
+<td>有条件推进的前提是交割前锁定四类硬证据</td>
+<td>建议立项推进，但交割前需锁定SLC质量与客户、MLC、供应链、财务质量四类证据</td>
+<td>投资决策清单</td>
+<td>全部核心证据</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="2-行业与公司隐含呼应关系">2. 行业与公司隐含呼应关系</h2>
 <p>该表仅用于md和后续内容把控，不建议直接呈现在PPT图片中。</p>
-<p>| 优化版PDF主逻辑 | 行业章节证明 | 公司章节回应 |</p>
-<p>|---|---|---|</p>
-<p>| EOL供给真空 | Slide 2-5证明EOL来自大厂资源迁移，需求仍在，3D短期难替代，客户会提前做二供 | Slide 13-17证明扬贺扬有窗口前产品、中兴客户验证、客户穿透和报表量价弹性 |</p>
-<p>| SLC窗口型标的 | Slide 6-8证明SLC市场足够、下游价值分层、竞争胜负手在客户认证与供货 | Slide 14-17用16/19nm SLC、中兴链条、客户穿透和ASP跃升证明公司已进入SLC窗口 |</p>
-<p>| MLC中期alpha | Slide 9-10证明容量升级和MLC供给收缩构成更高弹性窗口，但门槛高 | Slide 18-19把扬贺扬MLC作为里程碑期权验证，而非按已兑现处理 |</p>
-<p>| 跨区域团队与供应链协同 | Slide 11-12定义窗口型企业需要工程化交付和长期平台能力 | Slide 20核验韩国、台湾、大陆资源是否能转成供应链、CP测试和稳定交付壁垒 |</p>
-<p>---</p>
-<h2>3. 生图组织要求</h2>
-<p>1. Slide 1采用四模块总纲，不拆成多页；四个模块标题必须使用优化版PDF四条主逻辑的压缩版，不新增第五条逻辑。</p>
-<p>2. 行业章节标题必须是“因果/判断/结论”，如“AI存储高回报正在把成熟2D NAND挤出大厂资源表”，不得写“EOL背景”“市场规模”“SLC窗口的价值要按下游拆开看”。</p>
-<p>3. 公司章节的Slide 13虽然承担公司基本情况功能，但标题仍必须表达投资含义，不写“公司基本情况”。</p>
-<p>4. 证据表和内部注释可写“需要验证/证据边界”，但可见PPT页面不出现“证明闭环”“验证重点”“证据表”等过程语言。</p>
-<p>5. 弱证据只用于提示或里程碑，不作为可见硬结论；尤其是MLC、2026-2028预测和上市路径。</p></body></html>
+<table>
+<thead>
+<tr>
+<th>优化版PDF主逻辑</th>
+<th>行业章节证明</th>
+<th>公司章节回应</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>EOL供给真空</td>
+<td>Slide
+2-5证明EOL来自大厂资源迁移，需求仍在，3D短期难替代，客户会提前做二供</td>
+<td>Slide
+13-17证明扬贺扬有窗口前产品、中兴客户验证、客户穿透和报表量价弹性</td>
+</tr>
+<tr>
+<td>SLC窗口型标的</td>
+<td>Slide
+6-8证明SLC市场足够、下游价值分层、竞争胜负手在客户认证与供货</td>
+<td>Slide 14-17用16/19nm
+SLC、中兴链条、客户穿透和ASP跃升证明公司已进入SLC窗口</td>
+</tr>
+<tr>
+<td>MLC中期alpha</td>
+<td>Slide 9-10证明容量升级和MLC供给收缩构成更高弹性窗口，但门槛高</td>
+<td>Slide 18-19把扬贺扬MLC作为里程碑期权验证，而非按已兑现处理</td>
+</tr>
+<tr>
+<td>跨区域团队与供应链协同</td>
+<td>Slide 11-12定义窗口型企业需要工程化交付和长期平台能力</td>
+<td>Slide
+20核验韩国、台湾、大陆资源是否能转成供应链、CP测试和稳定交付壁垒</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="3-生图组织要求">3. 生图组织要求</h2>
+<ol type="1">
+<li>Slide
+1采用四模块总纲，不拆成多页；四个模块标题必须使用优化版PDF四条主逻辑的压缩版，不新增第五条逻辑。</li>
+<li>行业章节标题必须是“因果/判断/结论”，如“AI存储高回报正在把成熟2D
+NAND挤出大厂资源表”，不得写“EOL背景”“市场规模”“SLC窗口的价值要按下游拆开看”。</li>
+<li>公司章节的Slide
+13虽然承担公司基本情况功能，但标题仍必须表达投资含义，不写“公司基本情况”。</li>
+<li>证据表和内部注释可写“需要验证/证据边界”，但可见PPT页面不出现“证明闭环”“验证重点”“证据表”等过程语言。</li>
+<li>弱证据只用于提示或里程碑，不作为可见硬结论；尤其是MLC、2026-2028预测和上市路径。</li>
+</ol>
+</body>
+</html>

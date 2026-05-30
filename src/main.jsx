@@ -6,15 +6,19 @@ import "./styles.css";
 const labels = { pdf: "PDF", pptx: "PPTX", docx: "DOCX", xlsx: "XLSX", md: "MD", png: "PNG", jpg: "JPG" };
 const tableData = {
   zq: {
-    logic: [["主逻辑", "AI 将 CAD 从绘图工具升级为设计 Copilot，打开设计生产力入口。"], ["支撑变量", "云化架构、工程知识结构化、AI 生成能力、试点客户验证。"], ["输出用途", "约束后续 Slide 的核心判断和页标题。"]],
-    structure: [["核心逻辑", "先讲行业范式变化，再落到子虔产品与数据结构。"], ["行业章节", "工业软件生态圈、国产 CAD 弯道超车、云化 + AI 路径。"], ["公司章节", "公司基础、产品/数据/算法、成熟度路线图。"], ["财务与风险", "财务预测、试点闭环、商业化补强。"]],
-    evidence: [["行业 02 -> 公司 09", "CAD 处于工业软件关键入口，对应公司定位和业务边界。"], ["行业 04 -> 公司 10", "云化高敏捷 + AI 高智能，对应产品、数据、算法结构。"], ["行业 08 -> 公司 12", "架构云化路径，对应产品成熟度和路线图。"]]
+    logic: [["一页投资逻辑总纲", "AI CAD 的价值从绘图效率工具升级为设计知识、工程规则和方案生成入口；子虔的云原生架构、数据结构和 AI Native 产品方向共同支撑设计 Copilot 机会。"], ["主逻辑 1", "工业软件入口价值仍在 CAD，但传统国产替代路径难以形成代际优势。"], ["主逻辑 2", "云化架构、意图/拓扑/几何数据和 AI 交互方式，是新一代 CAD 弯道超车的核心变量。"], ["主逻辑 3", "子虔需要证明产品能力、试点客户、工程数据闭环和商业化交付可持续。"]],
+    structure: [["建议页序总表", "核心逻辑页 -> 行业章节 3 页 -> 公司章节 3 页 -> 财务与风险 2 页。"], ["行业章节", "先回答“为什么 CAD 会被 AI 重构、窗口在哪里、技术路径是什么”。"], ["公司章节", "再回答“子虔为什么具备抓住窗口的产品、数据、架构和客户验证”。"], ["财务与风险", "最后回到订单兑现、收入弹性、试点闭环和商业化补强。"]],
+    evidence: [["行业图：工业软件生态", "可见内容模块：CAD 在工业软件链条中的入口位置；证据表要求：工业软件生态、CAD 工作流位置、CATL 设计链条需求。"], ["行业图：云化 + AI 路径", "可见内容模块：云化高敏捷叠加 AI 高智能；证据表要求：云端协同、意图数据、AI 生成能力。"], ["公司图：产品数据算法结构", "可见内容模块：产品、数据、算法结构完善；证据表要求：产品截图、架构说明、API/MCP、客户试点。"]]
   },
   yhy: {
-    logic: [["主逻辑", "端侧 AI 带动低功耗、低成本、可靠存储需求，2D NAND 有补位机会。"], ["支撑变量", "AI 存储资源迁移、需求刚性、MLC/eMMC 升级窗口、国产供应链验证。"], ["输出用途", "约束后续 Slide 的投资结论、证据强弱和风险边界。"]],
-    structure: [["核心逻辑", "先讲边缘 AI 存储需求，再讲公司量产与交付能力。"], ["行业章节", "资源迁移、需求刚性、技术门槛。"], ["公司章节", "公司画像、SLC 量产、跨区域交付。"], ["财务与风险", "估值层次、下行风险矩阵。"]],
-    evidence: [["行业 02 -> 公司 13", "端侧资源迁移，对应公司产品定位和能力画像。"], ["行业 04 -> 公司 14", "需求刚性，对应 SLC 量产与工程交付可靠性。"], ["行业 10 -> 公司 20", "技术与客户门槛，对应跨区域交付和客户支持能力。"]]
+    logic: [["一页投资逻辑总纲", "边缘 AI 推动存储资源从云端向端侧扩散，低功耗、可靠、可控供应的 2D NAND/嵌入式存储存在结构性窗口；扬贺扬的量产、客户和交付能力决定能否抓住窗口。"], ["主逻辑 1", "端侧 AI 设备增加本地存储需求，且部分下游更看重稳定、功耗、成本和供应安全。"], ["主逻辑 2", "2D NAND/MLC/eMMC 不是单纯低端替代，而受认证、良率、交付和客户导入周期约束。"], ["主逻辑 3", "扬贺扬需要用量产能力、客户穿透、跨区域交付和成本曲线证明窗口可兑现。"]],
+    structure: [["建议页序总表", "核心逻辑页 -> 行业章节 3 页 -> 公司章节 3 页 -> 财务与风险 2 页。"], ["行业章节", "先回答“2D NAND 窗口期在哪些下游成立、为什么需求刚性、门槛是什么”。"], ["公司章节", "再回答“扬贺扬产品定位、量产能力和客户支持为什么能承接该窗口”。"], ["财务与风险", "最后回到估值层次、收入弹性和下行风险矩阵。"]],
+    evidence: [["行业图：端侧迁移", "可见内容模块：AI 存储资源向端侧迁移；证据表要求：端侧设备、容量/功耗、边缘 AI 应用场景。"], ["行业图：需求刚性", "可见内容模块：不同下游对可靠性和供应安全的刚性需求；证据表要求：工控/AIoT/车载等客户访谈与产品规格。"], ["公司图：SLC 量产与交付", "可见内容模块：公司量产、工程交付与客户支持能力；证据表要求：量产进展、客户导入、区域交付和良率成本。"]]
   }
+};
+const relationData = {
+  zq: [["行业：CAD 是工业软件入口", "公司：子虔业务定位与客户场景", "先证明入口足够关键，再证明子虔站在入口而不是外围工具。"], ["行业：云化 + AI 是弯道超车路径", "公司：产品/数据/算法结构", "行业页提出新路径，公司页证明自身底层结构与该路径匹配。"], ["行业：云原生架构通向 VibeCAD", "公司：产品成熟度路线图", "行业页定义终局，公司页证明从现有产品到 Copilot 的演进路线。"]],
+  yhy: [["行业：AI 存储资源向端侧迁移", "公司：产品定位与公司画像", "先证明端侧新增需求，再证明扬贺扬产品正好卡在低功耗、可靠和成本位置。"], ["行业：不同下游需求刚性", "公司：SLC 量产与工程能力", "行业页讲清楚为什么客户必须要稳定供给，公司页证明公司有量产和交付基础。"], ["行业：MLC/eMMC 升级存在门槛", "公司：跨区域交付与客户支持", "行业页提出认证和客户导入门槛，公司页回应为什么扬贺扬能抓住窗口期。"]]
 };
 
 function Badge({ children, blue }) {
@@ -159,8 +163,8 @@ function Cases({ cases, artifacts, visuals }) {
         </article>
       </section>
       <CaseTables projectId={project?.id} />
-      <ClosureMap visual={visuals.find((v) => v.id === "logic-closure-loop")} />
       <SectionedVisualGallery title={`${project?.shortName || ""}最终输出页面截图`} items={projectVisuals} />
+      <ProjectEvidenceMap projectId={project?.id} />
       <ArtifactGallery artifacts={projectArtifacts} visuals={visuals} />
     </main>
   );
@@ -173,9 +177,10 @@ function CaseTables({ projectId }) {
   return <section className="panel"><h2>三个 .md 文件的核心内容</h2><p>这里直接展示三个指导 PPT 图片生成的 .md 文件分别在做什么；附件点击仍保留 .md 标题，但打开为 PDF 展示版，便于投委现场浏览。</p><div className="table-grid">{tables.map(([title, data]) => <div className="mini-table" key={title}><h3>{title}</h3><table><tbody>{data.map(([k, v]) => <tr key={k}><th>{k}</th><td>{v}</td></tr>)}</tbody></table></div>)}</div></section>;
 }
 
-function ClosureMap({ visual }) {
-  if (!visual) return null;
-  return <section className="panel closure"><div><h2>行业逻辑与公司能力的闭环支撑</h2><p>行业章节不是孤立展示市场空间，核心作用是提出需求、技术路径和竞争门槛；公司章节对应证明产品能力、客户验证和交付成本，最后共同回到财务弹性与风险边界。</p></div><img src={imageSrc(visual)} alt={visual.title} /></section>;
+function ProjectEvidenceMap({ projectId }) {
+  const rows = relationData[projectId];
+  if (!rows) return null;
+  return <section className="panel"><h2>行业章节与公司章节的前后呼应关系</h2><p>行业页提出“为什么现在有窗口、窗口由什么变量驱动”；公司页必须逐条回应“为什么这个公司能承接这个窗口”，否则行业分析无法转化为投资判断。</p><div className="relation-grid">{rows.map(([industry, company, logic]) => <article className="relation-card" key={industry}><b>{industry}</b><span>对应</span><b>{company}</b><p>{logic}</p></article>)}</div></section>;
 }
 
 function VisualGallery({ title, items }) {
@@ -185,7 +190,7 @@ function VisualGallery({ title, items }) {
 
 function SectionedVisualGallery({ title, items }) {
   if (!items?.length) return null;
-  const sections = [["核心逻辑页", "核心逻辑页"], ["行业章节", "industry"], ["公司章节", "company"], ["财务与风险", "finance-risk"]];
+  const sections = [["核心逻辑页", "core"], ["行业章节", "industry"], ["公司章节", "company"], ["财务与风险", "finance-risk"]];
   return <section><h2>{title}</h2>{sections.map(([label, key]) => {
     const group = items.filter((i) => i.section === key);
     if (!group.length) return null;

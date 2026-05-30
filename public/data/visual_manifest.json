@@ -2,176 +2,192 @@
   "visuals": [
     {
       "id": "sop-ui",
-      "title": "???????",
-      "description": "?????? SOP ?????????AI ?????????????",
+      "title": "工作流总览界面",
+      "description": "SOP 主流程、输入资料、AI 处理和输出文件的关系。",
       "group": "workflow",
       "section": "workflow",
       "url": "/visuals/sop-ui.svg"
     },
     {
       "id": "skill-ui",
-      "title": "Skill ????",
-      "description": "??????? Skill ?????????????????",
+      "title": "Skill 沉淀界面",
+      "description": "展示三个 Skill 的输入、输出、阶段和质量门槛。",
       "group": "workflow",
       "section": "workflow",
       "url": "/visuals/skill-ui.svg"
     },
     {
       "id": "case-ui",
-      "title": "??????",
-      "description": "???????????????????????",
+      "title": "案例执行界面",
+      "description": "案例页的步骤导航和证据链展示方式。",
       "group": "workflow",
       "section": "workflow",
       "url": "/visuals/case-ui.svg"
     },
     {
       "id": "logic-closure-loop",
-      "title": "????????????",
-      "description": "? imagegen ??????????????????",
+      "title": "AI 工作流闭环示意图",
+      "description": "用于首页和方法论补充的流程型视觉图。",
       "group": "workflow",
-      "section": "closure",
+      "section": "workflow",
       "url": "/visuals/logic-closure-loop.png"
     },
     {
-      "id": "zq-core-01",
-      "title": "?????",
-      "description": "???? CAD ??????? Copilot?",
+      "id": "zq-slide-01",
+      "title": "子虔核心逻辑页",
+      "description": "必须展示的核心逻辑页：从 CAD 工具升级为设计 Copilot。",
       "group": "zq",
-      "section": "?????",
+      "section": "core",
+      "url": "/artifacts/zq/images/zq-core-01.png"
+    },
+    {
+      "id": "zq-core-01",
+      "title": "子虔核心逻辑页",
+      "description": "核心逻辑页，用于收束项目判断。",
+      "group": "zq",
+      "section": "core",
       "url": "/artifacts/zq/images/zq-core-01.png"
     },
     {
       "id": "zq-industry-02",
-      "title": "???? 01",
-      "description": "???????? CAD ???",
+      "title": "行业章节 01：工业软件生态与 CAD 入口价值",
+      "description": "说明 CAD 在工业软件链条中的入口位置。",
       "group": "zq",
       "section": "industry",
       "url": "/artifacts/zq/images/zq-industry-02.png"
     },
     {
       "id": "zq-industry-04",
-      "title": "???? 02",
-      "description": "?? CAD ?????????????? AI ????",
+      "title": "行业章节 02：CAD 弯道超车路径",
+      "description": "云化高敏捷叠加 AI 高智能，对应新一代 CAD 窗口。",
       "group": "zq",
       "section": "industry",
       "url": "/artifacts/zq/images/zq-industry-04.png"
     },
     {
       "id": "zq-industry-08",
-      "title": "???? 03",
-      "description": "??????? VibeCAD ??????",
+      "title": "行业章节 03：云原生架构路径",
+      "description": "架构云化是迈向 VibeCAD 终局的基础路径。",
       "group": "zq",
       "section": "industry",
       "url": "/artifacts/zq/images/zq-industry-08.png"
     },
     {
       "id": "zq-company-09",
-      "title": "???? 01",
-      "description": "?????????",
+      "title": "公司章节 01：公司基础与业务定位",
+      "description": "回应行业入口价值：产品与客户场景是否站在正确位置。",
       "group": "zq",
       "section": "company",
       "url": "/artifacts/zq/images/zq-company-09.png"
     },
     {
       "id": "zq-company-10",
-      "title": "???? 02",
-      "description": "?????????????? AI ??",
+      "title": "公司章节 02：产品、数据、算法结构",
+      "description": "回应 CAD+AI 路径：产品数据算法结构是否具备 AI 化基础。",
       "group": "zq",
       "section": "company",
       "url": "/artifacts/zq/images/zq-company-10.png"
     },
     {
       "id": "zq-company-12",
-      "title": "???? 03",
-      "description": "????????????????",
+      "title": "公司章节 03：产品能力与成熟度路线图",
+      "description": "回应云原生路径：产品能力是否能持续演进。",
       "group": "zq",
       "section": "company",
       "url": "/artifacts/zq/images/zq-company-12.png"
     },
     {
       "id": "zq-finance-19",
-      "title": "???",
-      "description": "?????",
+      "title": "财务页：财务预测",
+      "description": "展示订单和收入兑现路径。",
       "group": "zq",
       "section": "finance-risk",
       "url": "/artifacts/zq/images/zq-finance-19.png"
     },
     {
       "id": "zq-risk-20",
-      "title": "???",
-      "description": "???????????????????????",
+      "title": "风险页：试点闭环与商业化补强",
+      "description": "展示核心风险和可控机制。",
       "group": "zq",
       "section": "finance-risk",
       "url": "/artifacts/zq/images/zq-risk-20.png"
     },
     {
-      "id": "yhy-core-01",
-      "title": "?????",
-      "description": "?????? AI ????????????",
+      "id": "yhy-slide-01",
+      "title": "扬贺扬核心逻辑页",
+      "description": "必须展示的核心逻辑页：边缘 AI 存储机会与 2D NAND 窗口。",
       "group": "yhy",
-      "section": "?????",
+      "section": "core",
+      "url": "/artifacts/yhy/images/yhy-core-01.png"
+    },
+    {
+      "id": "yhy-core-01",
+      "title": "扬贺扬核心逻辑页",
+      "description": "核心逻辑页，用于收束项目判断。",
+      "group": "yhy",
+      "section": "core",
       "url": "/artifacts/yhy/images/yhy-core-01.png"
     },
     {
       "id": "yhy-industry-02",
-      "title": "???? 01",
-      "description": "AI ?????????????",
+      "title": "行业章节 01：AI 存储资源向端侧迁移",
+      "description": "AI 存储需求从云端外溢到边缘设备。",
       "group": "yhy",
       "section": "industry",
       "url": "/artifacts/yhy/images/yhy-industry-02.png"
     },
     {
       "id": "yhy-industry-04",
-      "title": "???? 02",
-      "description": "?? AI ???????",
+      "title": "行业章节 02：边缘 AI 存储需求刚性",
+      "description": "不同下游对低功耗、可靠性、供给安全的刚性要求。",
       "group": "yhy",
       "section": "industry",
       "url": "/artifacts/yhy/images/yhy-industry-04.png"
     },
     {
       "id": "yhy-industry-10",
-      "title": "???? 03",
-      "description": "MLC/eMMC ????????",
+      "title": "行业章节 03：MLC/eMMC 升级与技术门槛",
+      "description": "窗口期不是纯价格机会，而有工程和认证门槛。",
       "group": "yhy",
       "section": "industry",
       "url": "/artifacts/yhy/images/yhy-industry-10.png"
     },
     {
       "id": "yhy-company-13",
-      "title": "???? 01",
-      "description": "????????????",
+      "title": "公司章节 01：公司画像与产品定位",
+      "description": "回应端侧迁移：产品定位是否匹配边缘 AI 存储需求。",
       "group": "yhy",
       "section": "company",
       "url": "/artifacts/yhy/images/yhy-company-13.png"
     },
     {
       "id": "yhy-company-14",
-      "title": "???? 02",
-      "description": "SLC ?????????",
+      "title": "公司章节 02：SLC 量产与工程能力",
+      "description": "回应需求刚性：公司是否具备可靠量产和交付能力。",
       "group": "yhy",
       "section": "company",
       "url": "/artifacts/yhy/images/yhy-company-14.png"
     },
     {
       "id": "yhy-company-20",
-      "title": "???? 03",
-      "description": "?????????????",
+      "title": "公司章节 03：跨区域交付与客户支持",
+      "description": "回应认证与客户门槛：公司是否能抓住窗口期。",
       "group": "yhy",
       "section": "company",
       "url": "/artifacts/yhy/images/yhy-company-20.png"
     },
     {
       "id": "yhy-finance-22",
-      "title": "???",
-      "description": "??????????",
+      "title": "财务页：估值层次与弹性",
+      "description": "展示估值层次和财务弹性。",
       "group": "yhy",
       "section": "finance-risk",
       "url": "/artifacts/yhy/images/yhy-finance-22.png"
     },
     {
       "id": "yhy-risk-23",
-      "title": "???",
-      "description": "???????",
+      "title": "风险页：下行风险矩阵",
+      "description": "展示核心风险和下行边界。",
       "group": "yhy",
       "section": "finance-risk",
       "url": "/artifacts/yhy/images/yhy-risk-23.png"

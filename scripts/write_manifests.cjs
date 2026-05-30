@@ -1,0 +1,89 @@
+const fs = require("fs");
+const path = require("path");
+
+const dataDir = path.join(__dirname, "..", "public", "data");
+const projectName = { zq: "子虔科技", yhy: "扬贺扬微电子" };
+
+const visuals = [
+  { id: "sop-ui", title: "工作流总览界面", description: "SOP 主流程、输入资料、AI 处理和输出文件的关系。", group: "workflow", section: "workflow", url: "/visuals/sop-ui.svg" },
+  { id: "skill-ui", title: "Skill 沉淀界面", description: "展示三个 Skill 的输入、输出、阶段和质量门槛。", group: "workflow", section: "workflow", url: "/visuals/skill-ui.svg" },
+  { id: "case-ui", title: "案例执行界面", description: "案例页的步骤导航和证据链展示方式。", group: "workflow", section: "workflow", url: "/visuals/case-ui.svg" },
+  { id: "logic-closure-loop", title: "AI 工作流闭环示意图", description: "用于首页和方法论补充的流程型视觉图。", group: "workflow", section: "workflow", url: "/visuals/logic-closure-loop.png" },
+  { id: "zq-slide-01", title: "子虔核心逻辑页", description: "必须展示的核心逻辑页：从 CAD 工具升级为设计 Copilot。", group: "zq", section: "core", url: "/artifacts/zq/images/zq-core-01.png" },
+  { id: "zq-core-01", title: "子虔核心逻辑页", description: "核心逻辑页，用于收束项目判断。", group: "zq", section: "core", url: "/artifacts/zq/images/zq-core-01.png" },
+  { id: "zq-industry-02", title: "行业章节 01：工业软件生态与 CAD 入口价值", description: "说明 CAD 在工业软件链条中的入口位置。", group: "zq", section: "industry", url: "/artifacts/zq/images/zq-industry-02.png" },
+  { id: "zq-industry-04", title: "行业章节 02：CAD 弯道超车路径", description: "云化高敏捷叠加 AI 高智能，对应新一代 CAD 窗口。", group: "zq", section: "industry", url: "/artifacts/zq/images/zq-industry-04.png" },
+  { id: "zq-industry-08", title: "行业章节 03：云原生架构路径", description: "架构云化是迈向 VibeCAD 终局的基础路径。", group: "zq", section: "industry", url: "/artifacts/zq/images/zq-industry-08.png" },
+  { id: "zq-company-09", title: "公司章节 01：公司基础与业务定位", description: "回应行业入口价值：产品与客户场景是否站在正确位置。", group: "zq", section: "company", url: "/artifacts/zq/images/zq-company-09.png" },
+  { id: "zq-company-10", title: "公司章节 02：产品、数据、算法结构", description: "回应 CAD+AI 路径：产品数据算法结构是否具备 AI 化基础。", group: "zq", section: "company", url: "/artifacts/zq/images/zq-company-10.png" },
+  { id: "zq-company-12", title: "公司章节 03：产品能力与成熟度路线图", description: "回应云原生路径：产品能力是否能持续演进。", group: "zq", section: "company", url: "/artifacts/zq/images/zq-company-12.png" },
+  { id: "zq-finance-19", title: "财务页：财务预测", description: "展示订单和收入兑现路径。", group: "zq", section: "finance-risk", url: "/artifacts/zq/images/zq-finance-19.png" },
+  { id: "zq-risk-20", title: "风险页：试点闭环与商业化补强", description: "展示核心风险和可控机制。", group: "zq", section: "finance-risk", url: "/artifacts/zq/images/zq-risk-20.png" },
+  { id: "yhy-slide-01", title: "扬贺扬核心逻辑页", description: "必须展示的核心逻辑页：边缘 AI 存储机会与 2D NAND 窗口。", group: "yhy", section: "core", url: "/artifacts/yhy/images/yhy-core-01.png" },
+  { id: "yhy-core-01", title: "扬贺扬核心逻辑页", description: "核心逻辑页，用于收束项目判断。", group: "yhy", section: "core", url: "/artifacts/yhy/images/yhy-core-01.png" },
+  { id: "yhy-industry-02", title: "行业章节 01：AI 存储资源向端侧迁移", description: "AI 存储需求从云端外溢到边缘设备。", group: "yhy", section: "industry", url: "/artifacts/yhy/images/yhy-industry-02.png" },
+  { id: "yhy-industry-04", title: "行业章节 02：边缘 AI 存储需求刚性", description: "不同下游对低功耗、可靠性、供给安全的刚性要求。", group: "yhy", section: "industry", url: "/artifacts/yhy/images/yhy-industry-04.png" },
+  { id: "yhy-industry-10", title: "行业章节 03：MLC/eMMC 升级与技术门槛", description: "窗口期不是纯价格机会，而有工程和认证门槛。", group: "yhy", section: "industry", url: "/artifacts/yhy/images/yhy-industry-10.png" },
+  { id: "yhy-company-13", title: "公司章节 01：公司画像与产品定位", description: "回应端侧迁移：产品定位是否匹配边缘 AI 存储需求。", group: "yhy", section: "company", url: "/artifacts/yhy/images/yhy-company-13.png" },
+  { id: "yhy-company-14", title: "公司章节 02：SLC 量产与工程能力", description: "回应需求刚性：公司是否具备可靠量产和交付能力。", group: "yhy", section: "company", url: "/artifacts/yhy/images/yhy-company-14.png" },
+  { id: "yhy-company-20", title: "公司章节 03：跨区域交付与客户支持", description: "回应认证与客户门槛：公司是否能抓住窗口期。", group: "yhy", section: "company", url: "/artifacts/yhy/images/yhy-company-20.png" },
+  { id: "yhy-finance-22", title: "财务页：估值层次与弹性", description: "展示估值层次和财务弹性。", group: "yhy", section: "finance-risk", url: "/artifacts/yhy/images/yhy-finance-22.png" },
+  { id: "yhy-risk-23", title: "风险页：下行风险矩阵", description: "展示核心风险和下行边界。", group: "yhy", section: "finance-risk", url: "/artifacts/yhy/images/yhy-risk-23.png" },
+];
+
+const artifacts = [];
+function artifact(id, projectId, title, fileName, fileType, url, description, extra = {}) {
+  artifacts.push({
+    id,
+    projectId,
+    projectName: projectName[projectId],
+    sopStepId: extra.sopStepId || "sop-06-slide-images",
+    title,
+    fileName,
+    fileType,
+    url,
+    version: extra.version || "final",
+    description,
+    isFinal: extra.isFinal ?? true,
+    uploadStatus: "ready",
+    ...extra,
+  });
+}
+
+artifact("zq-bp", "zq", "子虔科技 BP 原始资料", "zq-bp.pdf", "pdf", "/artifacts/zq/files/zq-bp.pdf", "项目资料池中的公司 BP，可在线打开或下载。", { sopStepId: "sop-01-material-collection", version: "datapack", isFinal: false });
+artifact("zq-background-risk", "zq", "行业背景、公司背景与风险管理文字稿", "zq-background-risk.pdf", "pdf", "/artifacts/zq/files/zq-background-risk.pdf", "用于补充行业、公司和风险判断的研究输出。", { sopStepId: "sop-02-research-expansion", version: "20260525", isFinal: false });
+[
+  ["zq-guide-md-01", "zq-01-investment-logic", "投资逻辑框架 .md"],
+  ["zq-guide-md-02", "zq-02-slides-structure", "Slides 框架结构 .md"],
+  ["zq-guide-md-03", "zq-03-page-evidence", "逐页内容与证据表 .md"],
+].forEach(([id, name, title]) => artifact(id, "zq", title, `${name}.md`, "md", `/artifacts/zq/md/${name}.pdf`, "点击打开 PDF 展示版；标题保留 .md 口径，对应实际工作流中的 Markdown 文件。", { sopStepId: "sop-05-three-md", version: "v5", displayFileType: "pdf" }));
+artifact("zq-image2ppt", "zq", "子虔贴图版 PPT", "zq-image2ppt.pptx", "pptx", "/artifacts/zq/files/zq-image2ppt.pptx", "由 Image2PPT 组装的 16:9 贴图版 PPTX。", { sopStepId: "sop-07-image2ppt", version: "v4" });
+
+artifact("yhy-bp", "yhy", "扬贺扬 BP 原始资料", "yhy-bp.pdf", "pdf", "/artifacts/yhy/files/yhy-bp.pdf", "项目资料池中的公司 BP，可在线打开或下载。", { sopStepId: "sop-01-material-collection", version: "datapack", isFinal: false });
+artifact("yhy-investment-logic-pdf", "yhy", "扬贺扬投资逻辑及要点阐述 PDF", "yhy-investment-logic.pdf", "pdf", "/artifacts/yhy/files/yhy-investment-logic.pdf", "进入 PPT 图片生成指导文件前的核心投资逻辑材料。", { sopStepId: "sop-04-logic-expansion", version: "20260527" });
+artifact("yhy-project-research", "yhy", "扬贺扬项目研究 V2", "yhy-project-research-v2.pdf", "pdf", "/artifacts/yhy/files/yhy-project-research-v2.pdf", "项目资料池中的研究材料。", { sopStepId: "sop-02-research-expansion", version: "v2", isFinal: false });
+[
+  ["yhy-guide-md-01", "yhy-01-investment-logic", "投资逻辑框架 .md"],
+  ["yhy-guide-md-02", "yhy-02-slides-structure", "Slides 框架结构 .md"],
+  ["yhy-guide-md-03", "yhy-03-page-evidence", "逐页内容与证据表 .md"],
+].forEach(([id, name, title]) => artifact(id, "yhy", title, `${name}.md`, "md", `/artifacts/yhy/md/${name}.pdf`, "点击打开 PDF 展示版；标题保留 .md 口径，对应实际工作流中的 Markdown 文件。", { sopStepId: "sop-05-three-md", version: "v5", displayFileType: "pdf" }));
+
+visuals.filter((v) => v.group === "zq" || v.group === "yhy").forEach((v) => {
+  artifact(v.id, v.group, v.title, path.basename(v.url), "png", v.url, v.description, {
+    thumbnailUrl: v.url,
+    visualId: v.id,
+    section: v.section,
+  });
+});
+
+fs.writeFileSync(path.join(dataDir, "visual_manifest.json"), JSON.stringify({ visuals }, null, 2), "utf8");
+fs.writeFileSync(path.join(dataDir, "asset_manifest.json"), JSON.stringify({
+  schemaVersion: "1.2.1",
+  sourcePolicy: {
+    privacy: "public",
+    redactionRequired: false,
+    notes: "Core public materials are deployed as static files under /artifacts. Markdown files are displayed through PDF renderings while preserving .md titles.",
+  },
+  artifacts,
+}, null, 2), "utf8");
+
